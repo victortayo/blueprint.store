@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blueprint - The Perfect Plain Tee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
     <style>
         * {
             margin: 0;
@@ -13,9 +17,10 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: "Space Grotesk", sans-serif;
+            /* font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; */
             line-height: 1.6;
-            color: #2a2a2a;
+            color: #00072d;
             background: #1d1212;
             overflow-x: hidden;
         }
@@ -30,7 +35,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+            border-bottom: 1px solid rgba(0, 7, 45, 0.1);
             display: flex;
             justify-content: left;
             align-items: center;
@@ -86,9 +91,8 @@
         .hero {
             min-height: 100vh;
             background-image: 
-                linear-gradient(135deg, rgba(119, 119, 1, 0.142) 0%, rgba(203, 152, 1, 0.2) 30%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/><circle cx="200" cy="300" r="100" fill="white" opacity="0.05"/><circle cx="800" cy="600" r="150" fill="white" opacity="0.03"/><circle cx="500" cy="800" r="80" fill="white" opacity="0.04"/></svg>'),                
-                url('images/bp-03.png');
+                /* linear-gradient(135deg, rgba(119, 119, 1, 0.142) 0%, rgba(203, 152, 1, 0.2) 30%), */             
+                url('images/bp-03.jpg');
 
                 
             background-size: cover;
@@ -127,6 +131,7 @@
         }
 
         .hero h1 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 700;
             color: #fff;
@@ -144,7 +149,7 @@
         }
 
         /* .cta-button {
-            background: #2a2a2a;
+            background: #00072d;
             color: #fff;
             padding: 1.2rem 3rem;
             font-size: 1rem;
@@ -166,6 +171,10 @@
             box-shadow: 0 8px 30px rgba(42, 42, 42, 0.4);
             background: #1a1a1a;
         } */
+
+         button {
+            font-family: "Space Grotesk", sans-serif;
+        } 
 
         .cta-button {
             background: #FFD93D;
@@ -202,7 +211,7 @@
             font-weight: 800;
             text-align: center;
             margin-bottom: 4rem;
-            color: #2a2a2a;
+            color: #00072d;
             letter-spacing: -1px;
         }
 
@@ -262,6 +271,7 @@
         }
 
         .carousel-title {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -278,28 +288,35 @@
 
         /* Carousel Items with Sophisticated Placeholder Images */
         .carousel-item:nth-child(1) { 
-            background: linear-gradient(135deg, #FFD93D 0%, #FF8A80 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23f8f9fa"/><circle cx="100" cy="100" r="50" fill="%23e9ecef"/><circle cx="300" cy="300" r="70" fill="%23dee2e6"/><path d="M50 350 Q200 250 350 350" stroke="%23adb5bd" stroke-width="2" fill="none"/></svg>');
+            background: 
+                        /* linear-gradient(135deg, #FFD93D 0%, #FF8A80 10%), */
+                        url('images/bp-carousel\ \(3\).png');
         }
         .carousel-item:nth-child(2) { 
-            background: linear-gradient(135deg, #4FC3F7 0%, #29B6F6 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23e3f2fd"/><polygon points="200,50 350,200 200,350 50,200" fill="%23bbdefb" opacity="0.6"/><circle cx="200" cy="200" r="80" fill="white" opacity="0.3"/></svg>');
+            background: 
+                        /* linear-gradient(135deg, #4FC3F7 0%, #29B6F6 100%), */
+                        url('images/bp-carousel\ \(3\).jpeg');
         }
         .carousel-item:nth-child(3) { 
-            background: linear-gradient(135deg, #81C784 0%, #66BB6A 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23f3e5f5"/><rect x="50" y="50" width="100" height="100" fill="%23e1bee7" opacity="0.7" rx="10"/><rect x="250" y="250" width="100" height="100" fill="%23ce93d8" opacity="0.5" rx="10"/></svg>');
+            background: 
+                        /* linear-gradient(135deg, #81C784 0%, #66BB6A 100%), */
+                        url('images/bp-carousel\ \(1\).jpg');
         }
         .carousel-item:nth-child(4) { 
-            background: linear-gradient(135deg, #F06292 0%, #EC407A 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23fff3e0"/><ellipse cx="200" cy="150" rx="120" ry="60" fill="%23ffe0b2"/><ellipse cx="200" cy="250" rx="80" ry="40" fill="%23ffcc02" opacity="0.4"/></svg>');
+            background: 
+                        /* linear-gradient(135deg, #F06292 0%, #EC407A 100%), */
+                        url('images/bp-carousel\ \(1\).jpeg');
         }
         .carousel-item:nth-child(5) { 
-            background: linear-gradient(135deg, #BA68C8 0%, #AB47BC 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23e8f5e8"/><path d="M0 300 Q100 200 200 300 T400 300 L400 400 L0 400 Z" fill="%23c8e6c9"/><circle cx="150" cy="120" r="30" fill="%23a5d6a7" opacity="0.8"/></svg>');
+            background: 
+                        /* linear-gradient(135deg, #BA68C8 0%, #AB47BC 100%), */
+                        url('images/bp-carousel\ \(2\).jpeg');
+
         }
         .carousel-item:nth-child(6) { 
-            background: linear-gradient(135deg, #FF8A65 0%, #FF7043 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="%23fce4ec"/><path d="M200 50 L350 200 L200 350 L50 200 Z" fill="%23f8bbd9" opacity="0.6"/><circle cx="200" cy="200" r="60" fill="white" opacity="0.5"/></svg>');
+            background: 
+                        /* linear-gradient(135deg, #FF8A65 0%, #FF7043 100%), */
+                        url('images/bp-carousel\ \(4\).png');
         }
 
         /* Carousel Navigation */
@@ -309,7 +326,7 @@
             transform: translateY(-50%);
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(42, 42, 42, 0.1);
+            border: 1px solid rgba(0, 7, 45, 0.1);
             width: 50px;
             height: 50px;
             border-radius: 6px;
@@ -317,16 +334,16 @@
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             font-size: 1.3rem;
             font-weight: 600;
-            color: #2a2a2a;
+            color: #00072d;
             z-index: 10;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .carousel-nav:hover {
-            background: #2a2a2a;
-            color: white;
+            background: #FFD93D;
+            color: rgba(0,7,45);
             transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 6px 30px rgba(42,42,42,0.2);
+            box-shadow: 0 6px 30px rgba(0,7,45,0.2);
         }
 
         .carousel-nav.prev {
@@ -355,7 +372,7 @@
         }
 
         .carousel-dot.active {
-            background: #2a2a2a;
+            background: #00072d;
             width: 24px;
         }
 
@@ -376,7 +393,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 2rem;
-            border: 1px solid rgba(42, 42, 42, 0.08);
+            border: 1px solid rgba(0, 7, 45, 0.08);
         }
 
         .form-row {
@@ -394,7 +411,7 @@
         .form-group label {
             font-weight: 600;
             margin-bottom: 0.8rem;
-            color: #2a2a2a;
+            color: #00072d;
             font-size: 0.9rem;
             letter-spacing: 0.3px;
             text-transform: uppercase;
@@ -402,6 +419,7 @@
 
         .form-group select,
         .form-group input {
+            font-family: "Space Grotesk", sans-serif;
             padding: 1rem 1.2rem;
             border: 1px solid #e5e7eb;
             border-radius: 6px;
@@ -414,8 +432,8 @@
         .form-group select:focus,
         .form-group input:focus {
             outline: none;
-            border-color: #2a2a2a;
-            box-shadow: 0 0 0 3px rgba(42, 42, 42, 0.1);
+            border-color: #00072d;
+            box-shadow: 0 0 0 3px rgba(0, 7, 45, 0.1);
         }
 
         .color-selection {
@@ -425,7 +443,7 @@
         .color-selection label {
             font-weight: 600;
             margin-bottom: 1.2rem;
-            color: #2a2a2a;
+            color: #00072d;
             font-size: 0.9rem;
             letter-spacing: 0.3px;
             text-transform: uppercase;
@@ -451,13 +469,13 @@
 
         .color-swatch:hover {
             transform: scale(1.05);
-            border-color: #2a2a2a;
+            border-color: #00072d;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .color-swatch.selected {
             transform: scale(1.1);
-            border-color: #2a2a2a;
+            border-color: #00072d;
             border-width: 3px;
             box-shadow: 0 0 0 2px rgba(42, 42, 42, 0.2);
         } */
@@ -506,7 +524,7 @@
             top: -40px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(42, 42, 42, 0.95);
+            background: rgba(0, 7, 45, 0.95);
             color: white;
             padding: 0.4rem 0.8rem;
             border-radius: 4px;
@@ -527,7 +545,7 @@
             left: 50%;
             transform: translateX(-50%);
             border: 5px solid transparent;
-            border-top-color: rgba(42, 42, 42, 0.95);
+            border-top-color: rgba(0, 7, 45, 0.95);
         }
 
         .color-name-overlay.show {
@@ -543,7 +561,7 @@
         }
 
         .quantity-btn {
-            background: #2a2a2a;
+            background: #00072d;
             color: #fff;
             border: none;
             width: 45px;
@@ -569,7 +587,7 @@
             font-weight: 700;
             min-width: 60px;
             text-align: center;
-            color: #2a2a2a;
+            color: #00072d;
         } */
 
         .quantity-section {
@@ -610,7 +628,7 @@
         }
 
         .add-to-order {
-            background: #2a2a2a;
+            background: #00072d;
             color: #fff;
             padding: 1.2rem 2rem;
             font-size: 1rem;
@@ -627,7 +645,7 @@
         .add-to-order:hover {
             background: #1a1a1a;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(42, 42, 42, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 7, 45, 0.3);
         }
 
         .order-summary {
@@ -636,14 +654,14 @@
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             margin-bottom: 2rem;
-            border: 1px solid #2a2a2a;
+            border: 1px solid #00072d;
         }
 
         .order-summary h3 {
             font-size: 1.4rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #2a2a2a;
+            color: #00072d;
             letter-spacing: -0.3px;
         }
 
@@ -669,7 +687,7 @@
 
         .item-name {
             font-weight: 600;
-            color: #2a2a2a;
+            color: #00072d;
         }
 
         .item-spec {
@@ -680,7 +698,7 @@
         .item-price {
             font-weight: 700;
             font-size: 1.1rem;
-            color: #2a2a2a;
+            color: #00072d;
             text-align: right;
         }
 
@@ -704,7 +722,7 @@
         .order-total {
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 2px solid #2a2a2a;
+            border-top: 2px solid #00072d;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -713,7 +731,7 @@
         .total-label {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #2a2a2a;
+            color: #00072d;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -721,7 +739,7 @@
         .total-amount {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #2a2a2a;
+            color: #00072d;
         }
 
         .whatsapp-button {
@@ -773,14 +791,14 @@
         .pricing-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #2a2a2a;
+            border-color: #00072d;
         }
 
         .pricing-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            color: #2a2a2a;
+            color: #00072d;
             letter-spacing: -0.3px;
         }
 
@@ -800,12 +818,12 @@
         .price-value {
             font-weight: 700;
             font-size: 1.1rem;
-            color: #2a2a2a;
+            color: #00072d;
         }
 
         /* Footer */
         .footer {
-            background: #2a2a2a;
+            background: #00072d;
             color: #fff;
             padding: 4rem 2rem;
             text-align: center;
@@ -983,7 +1001,7 @@
         .whatsapp-button:focus,
         .quantity-btn:focus,
         .carousel-nav:focus {
-            outline: 2px solid #2a2a2a;
+            outline: 2px solid #00072d;
             outline-offset: 2px;
         }
     </style>
@@ -1012,7 +1030,7 @@
                 <div class="carousel-item">
                     <div class="carousel-content">
                         <div class="carousel-title">Urban Essentials</div>
-                        <div class="carousel-subtitle">Minimalist city aesthetics</div>
+                        <div class="carousel-subtitle">Minimalist aesthetics</div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -1122,7 +1140,7 @@
         
         <div class="pricing-grid">
             <div class="pricing-card">
-                <h3>🧑‍🦲 Adult Collection</h3>
+                <h3> 🧔🏾👩🏾 Adult Collection</h3>
                 <div class="price-item">
                     <span class="price-name">Round Neck</span>
                     <span class="price-value">₦4,000</span>
@@ -1142,7 +1160,7 @@
             </div>
             
             <div class="pricing-card">
-                <h3>👶 Kids Collection</h3>
+                <h3>👦🏾👧🏾 Kids Collection</h3>
                 <div class="price-item">
                     <span class="price-name">Kids Round Neck</span>
                     <span class="price-value">₦3,000</span>
@@ -1362,7 +1380,7 @@
             
             setTimeout(() => {
                 addBtn.textContent = originalText;
-                addBtn.style.background = '#2a2a2a';
+                addBtn.style.background = '#00072d';
             }, 1500);
         }
 
