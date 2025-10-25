@@ -37,11 +37,16 @@
             padding: 1.5rem 2rem;
             border-bottom: 1px solid rgba(0, 7, 45, 0.1);
             display: flex;
-            justify-content: left;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
+            /* justify-content: left;
+            align-items: center;
+            padding: 10px 20px; */
             
         }
+
 
         header img {
             max-height: 40px;
@@ -86,6 +91,42 @@
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
         }
+
+
+    /* Cart Icon Styles */
+    .cart-icon {
+        font-size: 1.5rem;
+        cursor: pointer;
+        position: relative;
+        padding: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .cart-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .cart-count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #FFD93D;
+        color: #333;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .cart-count.show {
+        display: flex;
+    }
+
 
         /* Hero Section */
         .hero {
@@ -1050,6 +1091,13 @@
     <header class="header">
         <img src="images/logo.png" alt="">
         <!-- <div class="logo" aria-label="Blueprint Logo"></div> -->
+
+    <!-- NEW: Cart Icon -->
+    <div class="cart-icon" onclick="scrollToOrderSummary()">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
     </header>
 
     <!-- Hero Section -->
@@ -1388,41 +1436,57 @@
             document.getElementById('quantity').textContent = quantity;
         }
 
-        function addToOrder() {
-            const type = document.getElementById('tshirt-type').value;
-            const size = document.getElementById('size').value;
-            const unitPrice = getItemPrice(type, size);
-            const lineTotal = unitPrice * quantity;
-            
-            const orderItem = {
-                type: type,
-                size: size,
-                color: selectedColor.name,
-                quantity: quantity,
-                unitPrice: unitPrice,
-                lineTotal: lineTotal,
-                id: Date.now() // Simple unique ID
-            };
-            
-            orderItems.push(orderItem);
-            updateOrderSummary();
-            
-            // Reset quantity
-            quantity = 1;
-            document.getElementById('quantity').textContent = quantity;
-            
-            // Show success feedback
-            const addBtn = document.querySelector('.add-to-order');
-            const originalText = addBtn.textContent;
-            addBtn.textContent = '✓ Added!';
-            addBtn.style.background = '#10b981';
-            
-            setTimeout(() => {
-                addBtn.textContent = originalText;
-                addBtn.style.background = '#00072d';
-            }, 1500);
-        }
+    function addToOrder() {
+        const type = document.getElementById('tshirt-type').value;
+        const size = document.getElementById('size').value;
+        const unitPrice = getItemPrice(type, size);
+        const lineTotal = unitPrice * quantity;
+        
+        const orderItem = {
+            type: type,
+            size: size,
+            color: selectedColor.name,
+            quantity: quantity,
+            unitPrice: unitPrice,
+            lineTotal: lineTotal,
+            id: Date.now()
+        };
+        
+        orderItems.push(orderItem);
+        updateOrderSummary();
+        updateCartCount(); 
+        
+        // Reset quantity
+        quantity = 1;
+        document.getElementById('quantity').textContent = quantity;
+        
+        // Show success feedback
+        const addBtn = document.querySelector('.add-to-order');
+        const originalText = addBtn.textContent;
+        addBtn.textContent = '✓ Added!';
+        addBtn.style.background = '#10b981';
+        
+        setTimeout(() => {
+            addBtn.textContent = originalText;
+            addBtn.style.background = '#00072d';
+        }, 1500);
+    }
 
+
+    // Update the cart count whenever order items change
+    function updateCartCount() {
+        const cartCount = document.getElementById('cart-count');
+        const itemCount = orderItems.length;
+        
+        cartCount.textContent = itemCount;
+        
+        if (itemCount > 0) {
+            cartCount.classList.add('show');
+        } else {
+            cartCount.classList.remove('show');
+        }
+    }
+    
         function updateOrderSummary() {
             const container = document.getElementById('order-items');
             
@@ -1452,6 +1516,7 @@
         function removeItem(itemId) {
             orderItems = orderItems.filter(item => item.id !== itemId);
             updateOrderSummary();
+            updateCartCount();
         }
 
         function placeOrder() {
@@ -1476,7 +1541,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeColors();
             initializeCarousel();
-            
+            updateCartCount();
+
             // Enhanced smooth scroll with proper offset for fixed header
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1535,6 +1601,22 @@
                 ticking = true;
             }
         });
+
+    // Function to scroll to order summary
+    function scrollToOrderSummary() {
+        const orderSummary = document.getElementById('order-summary');
+        const headerOffset = 100;
+        const elementPosition = orderSummary.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+
+
+
     </script>
 </body>
 </html>
