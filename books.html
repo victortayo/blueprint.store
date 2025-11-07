@@ -703,6 +703,230 @@
             color: #1a1a1a;
         }
 
+        .learn-more-btn {
+            background: transparent;
+            color: #1a1a1a;
+            padding: 0.8rem 1.3rem;
+            border: 2px solid #1a1a1a;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .learn-more-btn:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* Book Modal */
+        .book-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            padding: 2rem;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .book-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(0, 0, 0, 0.1);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .modal-close:hover {
+            background: #1a1a1a;
+            color: white;
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            padding: 3rem;
+        }
+
+        .modal-image-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal-book-image {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .modal-quick-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .modal-info-section {
+            flex: 1;
+        }
+
+        .modal-category {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .modal-title {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .modal-author {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .modal-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 2rem;
+        }
+
+        .modal-section {
+            margin-bottom: 2rem;
+        }
+
+        .modal-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .modal-summary {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-reasons {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-reasons li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4b5563;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .modal-reasons li:last-child {
+            border-bottom: none;
+        }
+
+        .modal-reasons li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .modal-badge {
+            display: inline-block;
+            background: #D4AF37;
+            color: #1a1a1a;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
         .no-results {
             text-align: center;
             padding: 4rem 2rem;
@@ -745,17 +969,6 @@
             background: white;
             border-radius: 8px;
             margin-bottom: 1rem;
-        }
-
-        .cart-item-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-        }
-
-        .cart-item-title {
-            font-weight: 700;
-            color: #1a1a1a;
         }
 
         .cart-item-author {
@@ -909,6 +1122,21 @@
                 grid-template-columns: 1fr;
                 gap: 1rem;
             }
+            .modal-body {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+            .modal-book-image {
+                height: 300px;
+            }
+            .modal-title {
+                font-size: 1.8rem;
+            }
+            .modal-close {
+                top: 1rem;
+                right: 1rem;
+            }
         }
     </style>
 </head>
@@ -1053,6 +1281,16 @@
         </div>
     </section>
 
+    <!-- Book Detail Modal -->
+    <div class="book-modal" id="book-modal" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeBookModal()">×</button>
+            <div class="modal-body" id="modal-body">
+                <!-- Content injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
     <section class="cart-section" id="cart">
         <div class="cart-container">
             <div class="cart-summary">
@@ -1113,70 +1351,125 @@
         }
     }
 
-    // BOOKS DATABASE WITH IMAGE PATHS
-const books = [
-    { id: 1, title: 'The Midnight Library', author: 'Matt Haig', category: 'Fiction', price: 9000, badge: 'Bestseller', image: 'images/books/midnight-library.png' },
-    { id: 2, title: 'Atomic Habits', author: 'James Clear', category: 'Self-Help', price: 6000, badge: 'Popular', image: 'images/books/atomic-habits.png' },
-    { id: 3, title: 'Project Hail Mary', author: 'Andy Weir', category: 'Sci-Fi', price: 12000, badge: 'New', image: 'images/books/project-hail-mary.png' },
-    { id: 4, title: 'The Thursday Murder Club', author: 'Richard Osman', category: 'Mystery', price: 9500, badge: '', image: 'images/books/thursday-murder-club.png' },
-    { id: 5, title: 'Sapiens', author: 'Yuval Noah Harari', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/sapiens.png' },
-    { id: 6, title: 'People We Meet on Vacation', author: 'Emily Henry', category: 'Romance', price: 12000, badge: '', image: 'images/books/people-we-meet.png' },
-    { id: 7, title: 'The Silent Patient', author: 'Alex Michaelides', category: 'Mystery', price: 10500, badge: 'Bestseller', image: 'images/books/silent-patient.png' },
-    { id: 8, title: 'Educated', author: 'Tara Westover', category: 'Biography', price: 12000, badge: 'Award Winner', image: 'images/books/educated.png' },
-    { id: 9, title: 'Where the Crawdads Sing', author: 'Delia Owens', category: 'Fiction', price: 10500, badge: '', image: 'images/books/where-the-crawdads-sing.png' },
-    { id: 10, title: 'The Body Keeps the Score', author: 'Bessel van der Kolk', category: 'Self-Help', price: 12000, badge: '', image: 'images/books/body-keeps-the-score.png' },
-    { id: 11, title: 'Dune', author: 'Frank Herbert', category: 'Sci-Fi', price: 10500, badge: 'Classic', image: 'images/books/dune.png' },
-    { id: 12, title: 'The Seven Husbands of Evelyn Hugo', author: 'Taylor Jenkins Reid', category: 'Fiction', price: 12000, badge: '', image: 'images/books/seven-husbands-of-evelyn-hugo.png' },
-    { id: 13, title: 'Thinking, Fast and Slow', author: 'Daniel Kahneman', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/thinking-fast-and-slow.png' },
-    { id: 14, title: 'The Guest List', author: 'Lucy Foley', category: 'Mystery', price: 6500, badge: '', image: 'images/books/guest-list.png' },
-    { id: 15, title: '1984', author: 'George Orwell', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/1984.png' },
-    { id: 16, title: 'Beach Read', author: 'Emily Henry', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/beach-read.png' },
-    { id: 17, title: 'The Psychology of Money', author: 'Morgan Housel', category: 'Self-Help', price: 5500, badge: 'Bestseller', image: 'images/books/psychology-of-money.png' },
-    { id: 18, title: 'Gone Girl', author: 'Gillian Flynn', category: 'Mystery', price: 10500, badge: '', image: 'images/books/gone-girl.png' },
-    { id: 19, title: 'The Martian', author: 'Andy Weir', category: 'Sci-Fi', price: 10500, badge: '', image: 'images/books/martian.png' },
-    { id: 20, title: 'Becoming', author: 'Michelle Obama', category: 'Biography', price: 12000, badge: 'Bestseller', image: 'images/books/becoming.png' },
-    { id: 21, title: 'The Invisible Life of Addie LaRue', author: 'V.E. Schwab', category: 'Fiction', price: 12000, badge: '', image: 'images/books/addie-larue.png' },
-    { id: 22, title: 'How to Win Friends and Influence People', author: 'Dale Carnegie', category: 'Self-Help', price: 4500, badge: 'Classic', image: 'images/books/win-friends.png' },
-    { id: 23, title: 'The Song of Achilles', author: 'Madeline Miller', category: 'Fiction', price: 12000, badge: 'Award Winner', image: 'images/books/song-of-achilles.png' },
-    { id: 24, title: 'Ready Player One', author: 'Ernest Cline', category: 'Sci-Fi', price: 6500, badge: '', image: 'images/books/ready-player-one.png' },
-    { id: 25, title: 'It Ends with Us', author: 'Colleen Hoover', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/it-ends-with-us.png' },
-    { id: 26, title: 'The Alchemist', author: 'Paulo Coelho', category: 'Fiction', price: 3500, badge: 'Classic', image: 'images/books/alchemist.png' },
-    { id: 27, title: 'Steve Jobs', author: 'Walter Isaacson', category: 'Biography', price: 12000, badge: '', image: 'images/books/steve-jobs.png' },
-    { id: 28, title: 'Big Little Lies', author: 'Liane Moriarty', category: 'Mystery', price: 10500, badge: '', image: 'images/books/big-little-lies.png' },
-    { id: 29, title: 'The Power of Now', author: 'Eckhart Tolle', category: 'Self-Help', price: 3500, badge: '', image: 'images/books/power-of-now.png' },
-    { id: 30, title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas', category: 'Romance', price: 8000, badge: 'Popular', image: 'images/books/court-of-thorns-and-roses.png' },
-    { id: 31, title: 'Guns, Germs, and Steel', author: 'Jared Diamond', category: 'History', price: 12000, badge: '', image: 'images/books/guns-germs-steel.png' },
-    { id: 32, title: 'The Da Vinci Code', author: 'Dan Brown', category: 'Mystery', price: 12000, badge: '', image: 'images/books/davinci-code.png' },
-    { id: 33, title: 'Foundation', author: 'Isaac Asimov', category: 'Sci-Fi', price: 12000, badge: 'Classic', image: 'images/books/foundation.png' },
-    { id: 34, title: 'Outliers', author: 'Malcolm Gladwell', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/outliers.png' },
-    { id: 35, title: 'The Night Circus', author: 'Erin Morgenstern', category: 'Fiction', price: 12000, badge: '', image: 'images/books/night-circus.png' },
-    { id: 36, title: 'The Subtle Art of Not Giving a F*ck', author: 'Mark Manson', category: 'Self-Help', price: 4400, badge: 'Bestseller', image: 'images/books/subtle-art.png' },
-    { id: 37, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', category: 'Romance', price: 12000, badge: '', image: 'images/books/red-white-royal-blue.png' },
-    { id: 38, title: 'The Hobbit', author: 'J.R.R. Tolkien', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/hobbit.png' },
-    { id: 39, title: 'Long Live the Pumpkin Queen', author: 'Shea Ernshaw', category: 'Fiction', price: 12000, badge: 'New', image: 'images/books/pumpkin-queen.png' },
-    { id: 40, title: 'A Brief History of Time', author: 'Stephen Hawking', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/brief-history-of-time.png' },
-    { id: 41, title: 'Things Fall Apart', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/things-fall-apart.png' },
-    { id: 42, title: 'Half of a Yellow Sun', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/half-of-a-yellow-sun.png' },
-    { id: 43, title: 'Americanah', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 8500, badge: 'Award Winner', image: 'images/books/americanah.png' },
-    { id: 44, title: 'Purple Hibiscus', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 6000, badge: '', image: 'images/books/purple-hibiscus.png' },
-    { id: 45, title: 'Stay With Me', author: 'Ayọ̀bámi Adébáyọ̀', category: 'African', price: 12000, badge: '', image: 'images/books/stay-with-me.png' },
-    { id: 46, title: 'The Fishermen', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/fishermen.png' },
-    { id: 47, title: 'An Orchestra of Minorities', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: '', image: 'images/books/orchestra-of-minorities.png' },
-    { id: 48, title: 'We Need New Names', author: 'NoViolet Bulawayo', category: 'African', price: 12000, badge: '', image: 'images/books/we-need-new-names.png' },
-    { id: 49, title: 'Nervous Conditions', author: 'Tsitsi Dangarembga', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/nervous-conditions.png' },
-    { id: 50, title: 'The Joys of Motherhood', author: 'Buchi Emecheta', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/joys-of-motherhood.png' },
-    { id: 51, title: 'Arrow of God', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/arrow-of-god.png' },
-    { id: 52, title: 'Born a Crime', author: 'Trevor Noah', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/born-a-crime.png' },
-    { id: 53, title: 'The Secret Lives of Baba Segi\'s Wives', author: 'Lola Shoneyin', category: 'African', price: 10000, badge: '', image: 'images/books/baba-segi-wives.png' },
-    { id: 54, title: 'Homegoing', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/homegoing.png' },
-    { id: 55, title: 'Transcendent Kingdom', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: '', image: 'images/books/transcendent-kingdom.png' },
-    { id: 56, title: 'The Thing Around Your Neck', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 10500, badge: '', image: 'images/books/thing-around-your-neck.png' },
-    { id: 57, title: 'My Sister, the Serial Killer', author: 'Oyinkan Braithwaite', category: 'African', price: 5200, badge: 'Popular', image: 'images/books/my-sister-the-serial-killer.png' },
-    { id: 58, title: 'Ghana Must Go', author: 'Taiye Selasi', category: 'African', price: 12000, badge: '', image: 'images/books/ghana-must-go.png' },
-    { id: 59, title: 'The Beautiful Ones Are Not Yet Born', author: 'Ayi Kwei Armah', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/beautiful-ones.png' },
-    { id: 60, title: 'Children of Blood and Bone', author: 'Tomi Adeyemi', category: 'African', price: 12000, badge: 'Popular', image: 'images/books/children-of-blood-and-bone.png' }
+    // BOOKS DATABASE WITH SUMMARIES
+    const books = [
+        { 
+            id: 1, 
+            title: 'The Midnight Library', 
+            author: 'Matt Haig', 
+            category: 'Fiction', 
+            price: 9000, 
+            badge: 'Bestseller', 
+            image: 'images/books/midnight-library.png',
+            summary: 'Between life and death lies a library with infinite possibilities. Nora Seed finds herself in the Midnight Library, where each book represents a different life she could have lived. A deeply moving exploration of regret, hope, and the infinite possibilities of existence.',
+            reasons: [
+                'Perfect for anyone questioning their life choices and wondering "what if"',
+                'A heartwarming reminder that your life has value, even in its darkest moments',
+                'Beautifully written with humor and profound wisdom about mental health and happiness'
+            ]
+        },
+        { 
+            id: 2, 
+            title: 'Atomic Habits', 
+            author: 'James Clear', 
+            category: 'Self-Help', 
+            price: 6000, 
+            badge: 'Popular', 
+            image: 'images/books/atomic-habits.png',
+            summary: 'Tiny changes, remarkable results. James Clear reveals the science behind habit formation and provides a proven framework for building good habits and breaking bad ones. A practical, transformative guide backed by research.',
+            reasons: [
+                'Learn the 1% improvement strategy that compounds into extraordinary success',
+                'Discover why willpower isn\'t enough and what actually works',
+                'Get a clear, actionable system you can start using today'
+            ]
+        },
+        { 
+            id: 3, 
+            title: 'Project Hail Mary', 
+            author: 'Andy Weir', 
+            category: 'Sci-Fi', 
+            price: 12000, 
+            badge: 'New', 
+            image: 'images/books/project-hail-mary.png',
+            summary: 'Ryland Grace wakes up on a spaceship with no memory of how he got there. His crewmates are dead. He\'s millions of miles from home. And humanity\'s last hope rests on his shoulders. A thrilling, funny, and deeply moving sci-fi adventure.',
+            reasons: [
+                'From the author of The Martian—witty, scientifically grounded, and unputdownable',
+                'Features one of the most heartwarming friendships in recent sci-fi',
+                'Perfect blend of humor, tension, and mind-bending science'
+            ]
+        },
+        { 
+            id: 4, 
+            title: 'The Thursday Murder Club', 
+            author: 'Richard Osman', 
+            category: 'Mystery', 
+            price: 9500, 
+            badge: '', 
+            image: 'images/books/thursday-murder-club.png',
+            summary: 'Four retirees meet weekly to investigate unsolved murders. When a local developer is found dead, they suddenly find themselves in the middle of their first real case. Charming, clever, and surprisingly touching.',
+            reasons: [
+                'A cozy mystery with brilliant wit and unforgettable characters',
+                'Proves that age is just a number when it comes to crime-solving',
+                'Perfect comfort read that\'s both intelligent and heartwarming'
+            ]
+        },
+        { id: 5, title: 'Sapiens', author: 'Yuval Noah Harari', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/sapiens.png' },
+        { id: 6, title: 'People We Meet on Vacation', author: 'Emily Henry', category: 'Romance', price: 12000, badge: '', image: 'images/books/people-we-meet.png' },
+        { id: 7, title: 'The Silent Patient', author: 'Alex Michaelides', category: 'Mystery', price: 10500, badge: 'Bestseller', image: 'images/books/silent-patient.png' },
+        { id: 8, title: 'Educated', author: 'Tara Westover', category: 'Biography', price: 12000, badge: 'Award Winner', image: 'images/books/educated.png' },
+        { id: 9, title: 'Where the Crawdads Sing', author: 'Delia Owens', category: 'Fiction', price: 10500, badge: '', image: 'images/books/where-the-crawdads-sing.png' },
+        { id: 10, title: 'The Body Keeps the Score', author: 'Bessel van der Kolk', category: 'Self-Help', price: 12000, badge: '', image: 'images/books/body-keeps-the-score.png' },
+        { id: 11, title: 'Dune', author: 'Frank Herbert', category: 'Sci-Fi', price: 10500, badge: 'Classic', image: 'images/books/dune.png' },
+        { id: 12, title: 'The Seven Husbands of Evelyn Hugo', author: 'Taylor Jenkins Reid', category: 'Fiction', price: 12000, badge: '', image: 'images/books/seven-husbands-of-evelyn-hugo.png' },
+        { id: 13, title: 'Thinking, Fast and Slow', author: 'Daniel Kahneman', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/thinking-fast-and-slow.png' },
+        { id: 14, title: 'The Guest List', author: 'Lucy Foley', category: 'Mystery', price: 6500, badge: '', image: 'images/books/guest-list.png' },
+        { id: 15, title: '1984', author: 'George Orwell', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/1984.png' },
+        { id: 16, title: 'Beach Read', author: 'Emily Henry', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/beach-read.png' },
+        { id: 17, title: 'The Psychology of Money', author: 'Morgan Housel', category: 'Self-Help', price: 5500, badge: 'Bestseller', image: 'images/books/psychology-of-money.png' },
+        { id: 18, title: 'Gone Girl', author: 'Gillian Flynn', category: 'Mystery', price: 10500, badge: '', image: 'images/books/gone-girl.png' },
+        { id: 19, title: 'The Martian', author: 'Andy Weir', category: 'Sci-Fi', price: 10500, badge: '', image: 'images/books/martian.png' },
+        { id: 20, title: 'Becoming', author: 'Michelle Obama', category: 'Biography', price: 12000, badge: 'Bestseller', image: 'images/books/becoming.png' },
+        { id: 21, title: 'The Invisible Life of Addie LaRue', author: 'V.E. Schwab', category: 'Fiction', price: 12000, badge: '', image: 'images/books/addie-larue.png' },
+        { id: 22, title: 'How to Win Friends and Influence People', author: 'Dale Carnegie', category: 'Self-Help', price: 4500, badge: 'Classic', image: 'images/books/win-friends.png' },
+        { id: 23, title: 'The Song of Achilles', author: 'Madeline Miller', category: 'Fiction', price: 12000, badge: 'Award Winner', image: 'images/books/song-of-achilles.png' },
+        { id: 24, title: 'Ready Player One', author: 'Ernest Cline', category: 'Sci-Fi', price: 6500, badge: '', image: 'images/books/ready-player-one.png' },
+        { id: 25, title: 'It Ends with Us', author: 'Colleen Hoover', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/it-ends-with-us.png' },
+        { id: 26, title: 'The Alchemist', author: 'Paulo Coelho', category: 'Fiction', price: 3500, badge: 'Classic', image: 'images/books/alchemist.png' },
+        { id: 27, title: 'Steve Jobs', author: 'Walter Isaacson', category: 'Biography', price: 12000, badge: '', image: 'images/books/steve-jobs.png' },
+        { id: 28, title: 'Big Little Lies', author: 'Liane Moriarty', category: 'Mystery', price: 10500, badge: '', image: 'images/books/big-little-lies.png' },
+        { id: 29, title: 'The Power of Now', author: 'Eckhart Tolle', category: 'Self-Help', price: 3500, badge: '', image: 'images/books/power-of-now.png' },
+        { id: 30, title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas', category: 'Romance', price: 8000, badge: 'Popular', image: 'images/books/court-of-thorns-and-roses.png' },
+        { id: 31, title: 'Guns, Germs, and Steel', author: 'Jared Diamond', category: 'History', price: 12000, badge: '', image: 'images/books/guns-germs-steel.png' },
+        { id: 32, title: 'The Da Vinci Code', author: 'Dan Brown', category: 'Mystery', price: 12000, badge: '', image: 'images/books/davinci-code.png' },
+        { id: 33, title: 'Foundation', author: 'Isaac Asimov', category: 'Sci-Fi', price: 12000, badge: 'Classic', image: 'images/books/foundation.png' },
+        { id: 34, title: 'Outliers', author: 'Malcolm Gladwell', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/outliers.png' },
+        { id: 35, title: 'The Night Circus', author: 'Erin Morgenstern', category: 'Fiction', price: 12000, badge: '', image: 'images/books/night-circus.png' },
+        { id: 36, title: 'The Subtle Art of Not Giving a F*ck', author: 'Mark Manson', category: 'Self-Help', price: 4400, badge: 'Bestseller', image: 'images/books/subtle-art.png' },
+        { id: 37, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', category: 'Romance', price: 12000, badge: '', image: 'images/books/red-white-royal-blue.png' },
+        { id: 38, title: 'The Hobbit', author: 'J.R.R. Tolkien', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/hobbit.png' },
+        { id: 39, title: 'Long Live the Pumpkin Queen', author: 'Shea Ernshaw', category: 'Fiction', price: 12000, badge: 'New', image: 'images/books/pumpkin-queen.png' },
+        { id: 40, title: 'A Brief History of Time', author: 'Stephen Hawking', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/brief-history-of-time.png' },
+        { id: 41, title: 'Things Fall Apart', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/things-fall-apart.png' },
+        { id: 42, title: 'Half of a Yellow Sun', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/half-of-a-yellow-sun.png' },
+        { id: 43, title: 'Americanah', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 8500, badge: 'Award Winner', image: 'images/books/americanah.png' },
+        { id: 44, title: 'Purple Hibiscus', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 6000, badge: '', image: 'images/books/purple-hibiscus.png' },
+        { id: 45, title: 'Stay With Me', author: 'Ayọ̀bámi Adébáyọ̀', category: 'African', price: 12000, badge: '', image: 'images/books/stay-with-me.png' },
+        { id: 46, title: 'The Fishermen', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/fishermen.png' },
+        { id: 47, title: 'An Orchestra of Minorities', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: '', image: 'images/books/orchestra-of-minorities.png' },
+        { id: 48, title: 'We Need New Names', author: 'NoViolet Bulawayo', category: 'African', price: 12000, badge: '', image: 'images/books/we-need-new-names.png' },
+        { id: 49, title: 'Nervous Conditions', author: 'Tsitsi Dangarembga', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/nervous-conditions.png' },
+        { id: 50, title: 'The Joys of Motherhood', author: 'Buchi Emecheta', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/joys-of-motherhood.png' },
+        { id: 51, title: 'Arrow of God', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/arrow-of-god.png' },
+        { id: 52, title: 'Born a Crime', author: 'Trevor Noah', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/born-a-crime.png' },
+        { id: 53, title: 'The Secret Lives of Baba Segi\'s Wives', author: 'Lola Shoneyin', category: 'African', price: 10000, badge: '', image: 'images/books/baba-segi-wives.png' },
+        { id: 54, title: 'Homegoing', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/homegoing.png' },
+        { id: 55, title: 'Transcendent Kingdom', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: '', image: 'images/books/transcendent-kingdom.png' },
+        { id: 56, title: 'The Thing Around Your Neck', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 10500, badge: '', image: 'images/books/thing-around-your-neck.png' },
+        { id: 57, title: 'My Sister, the Serial Killer', author: 'Oyinkan Braithwaite', category: 'African', price: 5200, badge: 'Popular', image: 'images/books/my-sister-the-serial-killer.png' },
+        { id: 58, title: 'Ghana Must Go', author: 'Taiye Selasi', category: 'African', price: 12000, badge: '', image: 'images/books/ghana-must-go.png' },
+        { id: 59, title: 'The Beautiful Ones Are Not Yet Born', author: 'Ayi Kwei Armah', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/beautiful-ones.png' },
+        { id: 60, title: 'Children of Blood and Bone', author: 'Tomi Adeyemi', category: 'African', price: 12000, badge: 'Popular', image: 'images/books/children-of-blood-and-bone.png' }
 ];
-
 
     let cart = [];
     let currentSlide = 0;
@@ -1218,6 +1511,7 @@ const books = [
                     <div class="book-title">${book.title}</div>
                     <div class="book-author">by ${book.author}</div>
                     <div class="book-price">₦${book.price.toLocaleString()}</div>
+                    <button class="learn-more-btn" onclick="openBookModal(${book.id})">Learn More</button>
                     <button class="add-to-cart-btn" onclick="addToCart(${book.id})">Add to Cart</button>
                 </div>
             </div>
@@ -1334,6 +1628,73 @@ const books = [
         window.open(`https://wa.me/2348153086994?text=${encodeURIComponent(message)}`, '_blank');
     }
 
+    // Modal Functions
+    function openBookModal(bookId) {
+        const book = books.find(b => b.id === bookId);
+        if (!book) return;
+
+        const modal = document.getElementById('book-modal');
+        const modalBody = document.getElementById('modal-body');
+        
+        const bookIndex = books.findIndex(b => b.id === bookId);
+        
+        modalBody.innerHTML = `
+            <div class="modal-image-section">
+                <div class="modal-book-image" style="${book.image ? '' : `background: ${generateBookColor(bookIndex)}`}">
+                    ${book.image ? `<img src="${book.image}" alt="${book.title}" onerror="this.style.display='none'; this.parentElement.style.background='${generateBookColor(bookIndex)}'">` : ''}
+                </div>
+                <div class="modal-quick-actions">
+                    <button class="add-to-cart-btn" onclick="addToCart(${book.id}); closeBookModal();">Add to Cart</button>
+                </div>
+            </div>
+            <div class="modal-info-section">
+                ${book.badge ? `<div class="modal-badge">${book.badge}</div>` : ''}
+                <div class="modal-category">${book.category}</div>
+                <h2 class="modal-title">${book.title}</h2>
+                <div class="modal-author">by ${book.author}</div>
+                <div class="modal-price">₦${book.price.toLocaleString()}</div>
+                
+                ${book.summary ? `
+                    <div class="modal-section">
+                        <h3>📖 About This Book</h3>
+                        <p class="modal-summary">${book.summary}</p>
+                    </div>
+                ` : ''}
+                
+                ${book.reasons ? `
+                    <div class="modal-section">
+                        <h3>💡 Why You'll Love It</h3>
+                        <ul class="modal-reasons">
+                            ${book.reasons.map(reason => `<li>${reason}</li>`).join('')}
+                        </ul>
+                    </div>
+                ` : ''}
+            </div>
+        `;
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookModal() {
+        const modal = document.getElementById('book-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function closeModalOnBackdrop(event) {
+        if (event.target.id === 'book-modal') {
+            closeBookModal();
+        }
+    }
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeBookModal();
+        }
+    });
+
     // Carousel Functions
     function updateCarousel() {
         const carousel = document.getElementById('carousel');
@@ -1383,4 +1744,15 @@ const books = [
     });
     </script>
 </body>
-</html>
+</html>info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .cart-item-title {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .cart-item-
