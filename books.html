@@ -602,8 +602,8 @@
         /* Book Grid */
         .book-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-bottom: 4rem;
         }
 
@@ -623,7 +623,7 @@
 
         .book-image {
             width: 100%;
-            height: 320px;
+            height: 280px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -651,7 +651,7 @@
         }
 
         .book-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .book-category {
@@ -664,30 +664,30 @@
 
         .book-title {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
             color: #1a1a1a;
             line-height: 1.3;
         }
 
         .book-author {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #6b7280;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .book-price {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #1a1a1a;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .add-to-cart-btn {
             background: #1a1a1a;
             color: white;
-            padding: 0.8rem 1.3rem;
+            padding: 0.7rem 1rem;
             border: none;
             border-radius: 6px;
             font-weight: 600;
@@ -695,7 +695,7 @@
             width: 100%;
             transition: all 0.3s ease;
             font-family: "Space Grotesk", sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .add-to-cart-btn:hover {
@@ -706,7 +706,7 @@
         .learn-more-btn {
             background: transparent;
             color: #1a1a1a;
-            padding: 0.8rem 1.3rem;
+            padding: 0.7rem 1rem;
             border: 2px solid #1a1a1a;
             border-radius: 6px;
             font-weight: 600;
@@ -714,8 +714,8 @@
             width: 100%;
             transition: all 0.3s ease;
             font-family: "Space Grotesk", sans-serif;
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
         }
 
         .learn-more-btn:hover {
@@ -1103,11 +1103,19 @@
                 background-position: center center;
             }
             .book-grid { 
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 1.5rem;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 1rem;
             }
-            .book-image { height: 240px; }
-            .book-title { font-size: 1.1rem; }
+            .book-image { height: 200px; }
+            .book-title { font-size: 0.95rem; }
+            .book-author { font-size: 0.8rem; }
+            .book-price { font-size: 1.1rem; }
+            .book-info { padding: 1rem; }
+            .learn-more-btn, .add-to-cart-btn {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+            }       
+                 
             .carousel-item { height: 400px; }
             .section-title { font-size: 2rem; }
             .category-filter { 
@@ -1413,62 +1421,348 @@
                 'Perfect comfort read that\'s both intelligent and heartwarming'
             ]
         },
-        { id: 5, title: 'Sapiens', author: 'Yuval Noah Harari', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/sapiens.png' },
-        { id: 6, title: 'People We Meet on Vacation', author: 'Emily Henry', category: 'Romance', price: 12000, badge: '', image: 'images/books/people-we-meet.png' },
-        { id: 7, title: 'The Silent Patient', author: 'Alex Michaelides', category: 'Mystery', price: 10500, badge: 'Bestseller', image: 'images/books/silent-patient.png' },
-        { id: 8, title: 'Educated', author: 'Tara Westover', category: 'Biography', price: 12000, badge: 'Award Winner', image: 'images/books/educated.png' },
-        { id: 9, title: 'Where the Crawdads Sing', author: 'Delia Owens', category: 'Fiction', price: 10500, badge: '', image: 'images/books/where-the-crawdads-sing.png' },
-        { id: 10, title: 'The Body Keeps the Score', author: 'Bessel van der Kolk', category: 'Self-Help', price: 12000, badge: '', image: 'images/books/body-keeps-the-score.png' },
-        { id: 11, title: 'Dune', author: 'Frank Herbert', category: 'Sci-Fi', price: 10500, badge: 'Classic', image: 'images/books/dune.png' },
-        { id: 12, title: 'The Seven Husbands of Evelyn Hugo', author: 'Taylor Jenkins Reid', category: 'Fiction', price: 12000, badge: '', image: 'images/books/seven-husbands-of-evelyn-hugo.png' },
-        { id: 13, title: 'Thinking, Fast and Slow', author: 'Daniel Kahneman', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/thinking-fast-and-slow.png' },
-        { id: 14, title: 'The Guest List', author: 'Lucy Foley', category: 'Mystery', price: 6500, badge: '', image: 'images/books/guest-list.png' },
-        { id: 15, title: '1984', author: 'George Orwell', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/1984.png' },
-        { id: 16, title: 'Beach Read', author: 'Emily Henry', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/beach-read.png' },
-        { id: 17, title: 'The Psychology of Money', author: 'Morgan Housel', category: 'Self-Help', price: 5500, badge: 'Bestseller', image: 'images/books/psychology-of-money.png' },
-        { id: 18, title: 'Gone Girl', author: 'Gillian Flynn', category: 'Mystery', price: 10500, badge: '', image: 'images/books/gone-girl.png' },
-        { id: 19, title: 'The Martian', author: 'Andy Weir', category: 'Sci-Fi', price: 10500, badge: '', image: 'images/books/martian.png' },
-        { id: 20, title: 'Becoming', author: 'Michelle Obama', category: 'Biography', price: 12000, badge: 'Bestseller', image: 'images/books/becoming.png' },
-        { id: 21, title: 'The Invisible Life of Addie LaRue', author: 'V.E. Schwab', category: 'Fiction', price: 12000, badge: '', image: 'images/books/addie-larue.png' },
-        { id: 22, title: 'How to Win Friends and Influence People', author: 'Dale Carnegie', category: 'Self-Help', price: 4500, badge: 'Classic', image: 'images/books/win-friends.png' },
-        { id: 23, title: 'The Song of Achilles', author: 'Madeline Miller', category: 'Fiction', price: 12000, badge: 'Award Winner', image: 'images/books/song-of-achilles.png' },
-        { id: 24, title: 'Ready Player One', author: 'Ernest Cline', category: 'Sci-Fi', price: 6500, badge: '', image: 'images/books/ready-player-one.png' },
-        { id: 25, title: 'It Ends with Us', author: 'Colleen Hoover', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/it-ends-with-us.png' },
-        { id: 26, title: 'The Alchemist', author: 'Paulo Coelho', category: 'Fiction', price: 3500, badge: 'Classic', image: 'images/books/alchemist.png' },
-        { id: 27, title: 'Steve Jobs', author: 'Walter Isaacson', category: 'Biography', price: 12000, badge: '', image: 'images/books/steve-jobs.png' },
-        { id: 28, title: 'Big Little Lies', author: 'Liane Moriarty', category: 'Mystery', price: 10500, badge: '', image: 'images/books/big-little-lies.png' },
-        { id: 29, title: 'The Power of Now', author: 'Eckhart Tolle', category: 'Self-Help', price: 3500, badge: '', image: 'images/books/power-of-now.png' },
-        { id: 30, title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas', category: 'Romance', price: 8000, badge: 'Popular', image: 'images/books/court-of-thorns-and-roses.png' },
-        { id: 31, title: 'Guns, Germs, and Steel', author: 'Jared Diamond', category: 'History', price: 12000, badge: '', image: 'images/books/guns-germs-steel.png' },
-        { id: 32, title: 'The Da Vinci Code', author: 'Dan Brown', category: 'Mystery', price: 12000, badge: '', image: 'images/books/davinci-code.png' },
-        { id: 33, title: 'Foundation', author: 'Isaac Asimov', category: 'Sci-Fi', price: 12000, badge: 'Classic', image: 'images/books/foundation.png' },
-        { id: 34, title: 'Outliers', author: 'Malcolm Gladwell', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/outliers.png' },
-        { id: 35, title: 'The Night Circus', author: 'Erin Morgenstern', category: 'Fiction', price: 12000, badge: '', image: 'images/books/night-circus.png' },
-        { id: 36, title: 'The Subtle Art of Not Giving a F*ck', author: 'Mark Manson', category: 'Self-Help', price: 4400, badge: 'Bestseller', image: 'images/books/subtle-art.png' },
-        { id: 37, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', category: 'Romance', price: 12000, badge: '', image: 'images/books/red-white-royal-blue.png' },
-        { id: 38, title: 'The Hobbit', author: 'J.R.R. Tolkien', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/hobbit.png' },
-        { id: 39, title: 'Long Live the Pumpkin Queen', author: 'Shea Ernshaw', category: 'Fiction', price: 12000, badge: 'New', image: 'images/books/pumpkin-queen.png' },
-        { id: 40, title: 'A Brief History of Time', author: 'Stephen Hawking', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/brief-history-of-time.png' },
-        { id: 41, title: 'Things Fall Apart', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/things-fall-apart.png' },
-        { id: 42, title: 'Half of a Yellow Sun', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/half-of-a-yellow-sun.png' },
-        { id: 43, title: 'Americanah', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 8500, badge: 'Award Winner', image: 'images/books/americanah.png' },
-        { id: 44, title: 'Purple Hibiscus', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 6000, badge: '', image: 'images/books/purple-hibiscus.png' },
-        { id: 45, title: 'Stay With Me', author: 'Ayọ̀bámi Adébáyọ̀', category: 'African', price: 12000, badge: '', image: 'images/books/stay-with-me.png' },
-        { id: 46, title: 'The Fishermen', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/fishermen.png' },
-        { id: 47, title: 'An Orchestra of Minorities', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: '', image: 'images/books/orchestra-of-minorities.png' },
-        { id: 48, title: 'We Need New Names', author: 'NoViolet Bulawayo', category: 'African', price: 12000, badge: '', image: 'images/books/we-need-new-names.png' },
-        { id: 49, title: 'Nervous Conditions', author: 'Tsitsi Dangarembga', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/nervous-conditions.png' },
-        { id: 50, title: 'The Joys of Motherhood', author: 'Buchi Emecheta', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/joys-of-motherhood.png' },
-        { id: 51, title: 'Arrow of God', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/arrow-of-god.png' },
-        { id: 52, title: 'Born a Crime', author: 'Trevor Noah', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/born-a-crime.png' },
-        { id: 53, title: 'The Secret Lives of Baba Segi\'s Wives', author: 'Lola Shoneyin', category: 'African', price: 10000, badge: '', image: 'images/books/baba-segi-wives.png' },
-        { id: 54, title: 'Homegoing', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/homegoing.png' },
-        { id: 55, title: 'Transcendent Kingdom', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: '', image: 'images/books/transcendent-kingdom.png' },
-        { id: 56, title: 'The Thing Around Your Neck', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 10500, badge: '', image: 'images/books/thing-around-your-neck.png' },
-        { id: 57, title: 'My Sister, the Serial Killer', author: 'Oyinkan Braithwaite', category: 'African', price: 5200, badge: 'Popular', image: 'images/books/my-sister-the-serial-killer.png' },
-        { id: 58, title: 'Ghana Must Go', author: 'Taiye Selasi', category: 'African', price: 12000, badge: '', image: 'images/books/ghana-must-go.png' },
-        { id: 59, title: 'The Beautiful Ones Are Not Yet Born', author: 'Ayi Kwei Armah', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/beautiful-ones.png' },
-        { id: 60, title: 'Children of Blood and Bone', author: 'Tomi Adeyemi', category: 'African', price: 12000, badge: 'Popular', image: 'images/books/children-of-blood-and-bone.png' }
+{ 
+    id: 5, 
+    title: 'Sapiens', 
+    author: 'Yuval Noah Harari', 
+    category: 'Non-Fiction', 
+    price: 12000, 
+    badge: 'Classic', 
+    image: 'images/books/sapiens.png',
+    summary: 'A groundbreaking narrative of humanity\'s creation and evolution that explores how Homo sapiens came to dominate the planet. Harari frames our history through three major revolutions: the Cognitive, the Agricultural, and the Scientific, examining how biology and history have defined what it means to be human.',
+    reasons: [
+        'Challenges what you know about our species by explaining how shared myths—like money, nations, and laws—are our greatest strength.',
+        'Offers a fascinating, big-picture perspective on how we went from insignificant apes to the rulers of Earth.',
+        'It is an engaging and accessible book that condenses vast amounts of history and science into a compelling story.'
+    ]
+},
+
+{ 
+    id: 6, 
+    title: 'People We Meet on Vacation', 
+    author: 'Emily Henry', 
+    category: 'Romance', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/people-we-meet.png',
+    summary: 'Opposites attract in this story of two best friends, Poppy and Alex, who have spent a decade taking summer trips together. After a falling out ruined their friendship two years ago, Poppy convinces Alex to take one last vacation to fix everything, forcing them to confront the one big truth that has always stood between them.',
+    reasons: [
+        'A perfect friends-to-lovers story with witty banter and heartfelt moments that will make you swoon.',
+        'Told in alternating timelines of past vacations and the present day, it is a fun and charming story with fantastic character development.',
+        'It is an entertaining and sweet romance that captures the joy of travel and the thrill of a slow-burn romance.'
+    ]
+},
+
+{ 
+    id: 7, 
+    title: 'The Silent Patient', 
+    author: 'Alex Michaelides', 
+    category: 'Mystery', 
+    price: 10500, 
+    badge: 'Bestseller', 
+    image: 'images/books/silent-patient.png',
+    summary: 'A famous painter, Alicia Berenson, shoots her husband five times and then never speaks another word. A psychotherapist, Theo Faber, is determined to unravel the mystery of her silence and becomes obsessed with her case, leading to a shocking and twisted conclusion.',
+    reasons: [
+        'A gripping psychological thriller with an unforgettable, jaw-dropping twist you won\'t see coming.',
+        'Skillfully explores themes of trauma, obsession, and the complex workings of the human mind.',
+        'The fast-paced narrative will keep you on the edge of your seat until the very last page.'
+    ]
+},
+
+{ 
+    id: 8, 
+    title: 'Educated', 
+    author: 'Tara Westover', 
+    category: 'Biography', 
+    price: 12000, 
+    badge: 'Award Winner', 
+    image: 'images/books/educated.png',
+    summary: 'Tara Westover recounts her journey of overcoming a survivalist family in rural Idaho to pursue an education. Having never attended school, she embarks on a quest for knowledge that takes her to Harvard and Cambridge University, forcing her to question everything she believed about family, loyalty, and herself.',
+    reasons: [
+        'An inspiring and unforgettable memoir about the transformative power of education and the courage it takes to forge your own identity.',
+        'A powerful exploration of complex family dynamics, resilience, and the struggle for self-discovery.',
+        'Westover\'s incredible story is a testament to the human ability to change one\'s life through determination and learning.'
+    ]
+},
+
+{ 
+    id: 9, 
+    title: 'Where the Crawdads Sing', 
+    author: 'Delia Owens', 
+    category: 'Fiction', 
+    price: 10500, 
+    badge: '', 
+    image: 'images/books/where-the-crawdads-sing.png',
+    summary: 'A coming-of-age story about Kya, a young girl abandoned by her family and left to raise herself in the marshes of North Carolina. Known as the "Marsh Girl," her isolated life is shattered when a local man is found dead, and she becomes the prime suspect in his murder.',
+    reasons: [
+        'A beautifully written ode to nature, combined with a compelling murder mystery and a touching story of survival.',
+        'Features a vivid and original main character whose resilience will capture your heart.',
+        'The atmospheric setting of the North Carolina marshlands is so vividly described it becomes a character in itself.'
+    ]
+},
+
+{ 
+    id: 10, 
+    title: 'The Body Keeps the Score', 
+    author: 'Bessel van der Kolk', 
+    category: 'Self-Help', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/body-keeps-the-score.png',
+    summary: 'Dr. Bessel van der Kolk explains how trauma reshapes both the body and brain, compromising sufferers\' capacities for pleasure, engagement, self-control, and trust. The book explores innovative treatments—from neurofeedback and meditation to sports and yoga—that offer new paths to recovery by activating the brain\'s natural neuroplasticity.',
+    reasons: [
+        'A groundbreaking work that fundamentally changes how we understand and treat traumatic stress.',
+        'Essential reading for anyone seeking to understand how our bodies hold onto traumatic experiences and how they can be healed.',
+        'Offers a holistic approach to recovery, emphasizing that healing must involve both the mind and body.'
+    ]
+},
+
+{ 
+    id: 11, 
+    title: 'Dune', 
+    author: 'Frank Herbert', 
+    category: 'Sci-Fi', 
+    price: 10500, 
+    badge: 'Classic', 
+    image: 'images/books/dune.png',
+    summary: 'Set on the desert planet Arrakis, this sci-fi epic follows young Paul Atreides, whose family is entrusted with control over the most valuable substance in the universe: "the spice." A sweeping tale of politics, religion, and humanity\'s struggle for survival, Dune is a masterpiece of world-building.',
+    reasons: [
+        'A foundational work of science fiction with unparalleled depth and complexity.',
+        'Explores timeless themes of power, ecology, and the perils of messianic figures.',
+        'An epic adventure that has inspired countless stories, films, and creators across generations.'
+    ]
+},
+
+{ 
+    id: 12, 
+    title: 'The Seven Husbands of Evelyn Hugo', 
+    author: 'Taylor Jenkins Reid', 
+    category: 'Fiction', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/seven-husbands-of-evelyn-hugo.png',
+    summary: 'Reclusive Old Hollywood legend Evelyn Hugo decides to tell her life story to an unknown magazine reporter, Monique Grant. From her rise to stardom to her seven scandalous marriages, Evelyn unveils a story of ruthless ambition, unexpected friendship, and a great forbidden love.',
+    reasons: [
+        'A captivating journey through the golden age of Hollywood, filled with glamour, secrets, and heartbreak.',
+        'Evelyn Hugo is an unforgettable character—complex, flawed, and fiercely independent.',
+        'Features a surprising and deeply emotional twist that connects Evelyn\'s past to Monique\'s present.'
+    ]
+},
+
+{ 
+    id: 13, 
+    title: 'Thinking, Fast and Slow', 
+    author: 'Daniel Kahneman', 
+    category: 'Non-Fiction', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/thinking-fast-and-slow.png',
+    summary: 'Nobel laureate Daniel Kahneman explains the two systems that drive the way we think: System 1 (fast, intuitive, emotional) and System 2 (slower, logical). The book reveals the biases of intuitive thinking and how we can tap into the benefits of slow thinking.',
+    reasons: [
+        'Gain a profound understanding of the mental shortcuts and biases that shape your everyday decisions.',
+        'Learn how to make better choices in both your personal and professional life.',
+        'A fascinating deep-dive into the architecture of the human mind from a pioneer in psychology.'
+    ]
+},
+
+{ 
+    id: 14, 
+    title: 'The Guest List', 
+    author: 'Lucy Foley', 
+    category: 'Mystery', 
+    price: 6500, 
+    badge: '', 
+    image: 'images/books/guest-list.png',
+    summary: 'A wedding celebration on a remote island off the coast of Ireland turns deadly. As a storm rages, old resentments and jealousies resurface, and one of the guests is found dead. Everyone is a suspect in this atmospheric, modern-day whodunit.',
+    reasons: [
+        'A classic "locked-room" mystery that will keep you guessing until the very end.',
+        'The story is told from multiple perspectives, building suspense as each character\'s secrets are revealed.',
+        'Perfect for fans of Agatha Christie, with a dark, contemporary, and thrilling twist.'
+    ]
+},
+
+{ 
+    id: 15, 
+    title: '1984', 
+    author: 'George Orwell', 
+    category: 'Fiction', 
+    price: 12000, 
+    badge: 'Classic', 
+    image: 'images/books/1984.png',
+    summary: 'George Orwell\'s dystopian masterpiece introduces a world of perpetual war, omnipresent government surveillance, and thought control under the watchful eye of Big Brother. The story follows Winston Smith as he secretly defies the totalitarian regime, a dangerous act that could cost him his life.',
+    reasons: [
+        'A timeless and chillingly relevant exploration of totalitarianism and the manipulation of truth.',
+        'Introduced concepts like "Big Brother" and "Thought Police" that are now part of our cultural lexicon.',
+        'A powerful warning about the dangers of losing individuality and freedom that is more important than ever.'
+    ]
+},
+
+{ 
+    id: 16, 
+    title: 'Beach Read', 
+    author: 'Emily Henry', 
+    category: 'Romance', 
+    price: 12000, 
+    badge: 'Popular', 
+    image: 'images/books/beach-read.png',
+    summary: 'A romance writer who no longer believes in love and a literary writer stuck in a rut engage in a summer-long challenge that may just upend everything they believe about happily ever afters. They strike a deal to swap genres and see who gets published first, but their arrangement leads to some unexpected discoveries.',
+    reasons: [
+        'A witty and heartfelt romance that is much deeper than its title suggests.',
+        'Explores themes of grief, writer\'s block, and finding your way back to happiness.',
+        'The banter between the main characters is sharp, funny, and utterly charming.'
+    ]
+},
+
+{ 
+    id: 17, 
+    title: 'The Psychology of Money', 
+    author: 'Morgan Housel', 
+    category: 'Self-Help', 
+    price: 5500, 
+    badge: 'Bestseller', 
+    image: 'images/books/psychology-of-money.png',
+    summary: 'Doing well with money isn’t necessarily about what you know. It’s about how you behave. Morgan Housel shares 19 short stories exploring the strange ways people think about money and teaches you how to make better sense of one of life’s most important topics.',
+    reasons: [
+        'Offers timeless lessons on wealth, greed, and happiness that go beyond spreadsheets and formulas.',
+        'Changes your perspective on finance by focusing on psychology and behavior.',
+        'Easy-to-read, engaging stories make complex financial concepts accessible to everyone.'
+    ]
+},
+
+{ 
+    id: 18, 
+    title: 'Gone Girl', 
+    author: 'Gillian Flynn', 
+    category: 'Mystery', 
+    price: 10500, 
+    badge: '', 
+    image: 'images/books/gone-girl.png',
+    summary: 'On the day of their fifth wedding anniversary, Nick Dunne\'s wife, Amy, disappears. Under pressure from the police and a growing media frenzy, Nick\'s portrait of a blissful union begins to crumble, and he becomes the prime suspect. A masterful thriller about a marriage gone terribly wrong.',
+    reasons: [
+        'A dark and twisted psychological thriller that redefined the genre with its unreliable narrators.',
+        'The mid-book plot twist is one of the most shocking and talked-about in modern fiction.',
+        'A chilling exploration of secrets, lies, and the dark side of a seemingly perfect relationship.'
+    ]
+},
+
+{ 
+    id: 19, 
+    title: 'The Martian', 
+    author: 'Andy Weir', 
+    category: 'Sci-Fi', 
+    price: 10500, 
+    badge: '', 
+    image: 'images/books/martian.png',
+    summary: 'After a fierce storm, astronaut Mark Watney is presumed dead and left behind by his crew on Mars. But Watney has survived and finds himself stranded and alone on a hostile planet. Using his ingenuity, he must find a way to signal to Earth that he is alive and survive until a potential rescue.',
+    reasons: [
+        'A gripping survival story packed with humor, intelligence, and scientific accuracy.',
+        'Mark Watney is a hilarious and brilliant narrator whose optimism is infectious.',
+        'It\'s a love letter to problem-solving, science, and human resilience against impossible odds.'
+    ]
+},
+
+
+{ 
+    id: 20, 
+    title: 'Becoming', 
+    author: 'Michelle Obama', 
+    category: 'Biography', 
+    price: 12000, 
+    badge: 'Bestseller', 
+    image: 'images/books/becoming.png',
+    summary: 'In her deeply personal memoir, former First Lady of the United States Michelle Obama chronicles her life, from her childhood in the South Side of Chicago to her years in the White House. A story of triumph, disappointment, and finding one\'s voice.',
+    reasons: [
+        'An inspiring and down-to-earth look at the life of one of the most iconic women of our time.',
+        'Filled with warmth, wisdom, and honesty about the pressures of public life and motherhood.',
+        'A powerful story about breaking barriers and using your platform to inspire others.'
+    ]
+},
+
+{ 
+    id: 21, 
+    title: 'The Invisible Life of Addie LaRue', 
+    author: 'V.E. Schwab', 
+    category: 'Fiction', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/addie-larue.png',
+    summary: 'In 1714 France, a young woman makes a Faustian bargain to live forever, but is cursed to be forgotten by everyone she meets. Addie LaRue\'s life becomes a dazzling adventure across centuries until, nearly 300 years later, she stumbles upon a young man in a bookstore who remembers her name.',
+    reasons: [
+        'A beautiful and lyrical story about love, art, and the legacy we leave behind.',
+        'Explores the profound question: What does it mean to be remembered?',
+        'A sweeping, romantic, and utterly unforgettable fantasy you won\'t be able to put down.'
+    ]
+},
+
+{ 
+    id: 22, 
+    title: 'How to Win Friends and Influence People', 
+    author: 'Dale Carnegie', 
+    category: 'Self-Help', 
+    price: 4500, 
+    badge: 'Classic', 
+    image: 'images/books/win-friends.png',
+    summary: 'A timeless self-help classic that has improved the lives of millions. Dale Carnegie offers practical advice and techniques on how to get out of a mental rut and make life more rewarding by improving your interactions with others.',
+    reasons: [
+        'The foundational book on social skills, communication, and leadership.',
+        'Offers simple, actionable principles that can immediately improve your personal and professional relationships.',
+        'A must-read for anyone looking to become more likable, persuasive, and effective.'
+    ]
+},
+
+{ 
+    id: 23, 
+    title: 'The Song of Achilles', 
+    author: 'Madeline Miller', 
+    category: 'Fiction', 
+    price: 12000, 
+    badge: 'Award Winner', 
+    image: 'images/books/song-of-achilles.png',
+    summary: 'A breathtakingly beautiful retelling of the Trojan War, told from the perspective of Patroclus, an exiled prince who forms an unbreakable bond with the legendary warrior Achilles. A story of love, friendship, and the devastating consequences of war.',
+    reasons: [
+        'A stunning and heartbreaking love story that brings Greek mythology to vivid, emotional life.',
+        'Madeline Miller\'s prose is lyrical, powerful, and deeply moving.',
+        'Perfect for anyone who loves epic tales of heroes, gods, and mortal hearts.'
+    ]
+},
+
+{ id: 24, title: 'Ready Player One', author: 'Ernest Cline', category: 'Sci-Fi', price: 6500, badge: '', image: 'images/books/ready-player-one.png', summary: 'In a bleak future, Wade Watts escapes his grim reality by logging into the OASIS, a vast virtual utopia. When the creator of the OASIS dies, he leaves behind an epic treasure hunt based on 1980s pop culture, with the winner inheriting his fortune and control of the virtual world.', reasons: ['A wildly fun and imaginative adventure packed with 80s nostalgia.', 'A thrilling quest that celebrates geek culture, video games, and friendship.', 'A fast-paced, cinematic story that is pure escapism.'] },
+{ id: 25, title: 'It Ends with Us', author: 'Colleen Hoover', category: 'Romance', price: 12000, badge: 'Popular', image: 'images/books/it-ends-with-us.png', summary: 'Lily overcomes a traumatic childhood to build a new life in Boston. She falls for a handsome neurosurgeon, Ryle Kincaid, but as their relationship deepens, she begins to see sides of him that remind her of her past. A brave and heartbreaking novel that explores the devastating cycle of abuse.', reasons: ['A powerful and emotional story that tackles a difficult subject with compassion and honesty.', 'Challenges perceptions of love, strength, and what it takes to break a painful cycle.', 'A bold, unforgettable, and deeply personal novel from a master of the genre.'] },
+{ id: 26, title: 'The Alchemist', author: 'Paulo Coelho', category: 'Fiction', price: 3500, badge: 'Classic', image: 'images/books/alchemist.png', summary: 'The magical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His journey takes him to the markets of Tangier and into the Egyptian desert, where he learns about listening to his heart and following his dreams.', reasons: ['An inspiring and simple fable about finding your destiny and pursuing your dreams.', 'Full of timeless wisdom and beautiful life lessons.', 'A short, powerful read that will stay with you long after you finish it.'] },
+{ id: 27, title: 'Steve Jobs', author: 'Walter Isaacson', category: 'Biography', price: 12000, badge: '', image: 'images/books/steve-jobs.png', summary: 'Based on more than forty interviews with Steve Jobs conducted over two years—as well as interviews with more than a hundred family members, friends, adversaries, competitors, and colleagues—this is the definitive biography of the Apple co-founder. A riveting story of a creative entrepreneur whose passion for perfection revolutionized six industries.', reasons: ['An unflinching look at one of the most brilliant and complicated innovators of our time.', 'A fascinating story of creativity, technology, and relentless ambition.', 'Provides invaluable lessons on design, leadership, and product innovation.'] },
+{ id: 28, title: 'Big Little Lies', author: 'Liane Moriarty', category: 'Mystery', price: 10500, badge: '', image: 'images/books/big-little-lies.png', summary: 'A tale of three mothers at a prestigious elementary school whose seemingly perfect lives unravel to the point of murder. A hilarious and heartbreaking story that explores the dangerous little lies we tell ourselves just to survive.', reasons: ['A brilliant blend of dark comedy, mystery, and domestic drama.', 'Features witty dialogue and deeply relatable characters with very real problems.', 'An insightful look at the complicated world of female friendships, marriage, and motherhood.'] },
+{ id: 29, title: 'The Power of Now', author: 'Eckhart Tolle', category: 'Self-Help', price: 3500, badge: '', image: 'images/books/power-of-now.png', summary: 'Eckhart Tolle\'s message is simple: living in the Now is the truest path to happiness and enlightenment. A spiritual guide that shows readers how to quiet their thoughts, see the world in the present moment, and find their truest and deepest self.', reasons: ['A transformative guide to mindfulness and spiritual awakening.', 'Helps you free yourself from the pain of the past and anxiety about the future.', 'A practical and profound book that can change your life by changing your state of consciousness.'] },
+{ id: 30, title: 'A Court of Thorns and Roses', author: 'Sarah J. Maas', category: 'Romance', price: 8000, badge: 'Popular', image: 'images/books/court-of-thorns-and-roses.png', summary: 'When huntress Feyre kills a wolf in the woods, a beast-like creature arrives to demand retribution. Dragged to a magical land she only knows about from legends, Feyre discovers that her captor is not an animal but Tamlin—one of the lethal, immortal faeries who once ruled their world.', reasons: ['A captivating and romantic retelling of "Beauty and the Beast" with a fantasy twist.', 'Features incredible world-building and a strong, resilient heroine.', 'The perfect escape for readers who love epic fantasy, romance, and high-stakes adventure.'] },
+{ id: 31, title: 'Guns, Germs, and Steel', author: 'Jared Diamond', category: 'History', price: 12000, badge: '', image: 'images/books/guns-germs-steel.png', summary: 'In this Pulitzer Prize-winning book, Jared Diamond argues that geographical and environmental factors shaped the modern world. He explains why Eurasian civilizations survived and conquered others, while refuting racially based theories of history.', reasons: ['A groundbreaking look at how geography, not race, shaped the destinies of different societies.', 'Answers the big questions of history with compelling scientific evidence.', 'A thought-provoking and ambitious book that will change the way you see the world.'] },
+{ id: 32, title: 'The Da Vinci Code', author: 'Dan Brown', category: 'Mystery', price: 12000, badge: '', image: 'images/books/davinci-code.png', summary: 'While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call: the elderly curator of the Louvre has been murdered, leaving behind a series of baffling ciphers. Langdon joins forces with a French cryptologist, Sophie Neveu, and discovers a trail of clues hidden in the works of Da Vinci, leading to a secret protected by a secret society for centuries.', reasons: ['A lightning-fast thriller that blends history, art, and conspiracy.', 'Full of fascinating puzzles, riddles, and historical secrets.', 'An unputdownable page-turner that will have you racing to the end.'] },
+{ id: 33, title: 'Foundation', author: 'Isaac Asimov', category: 'Sci-Fi', price: 12000, badge: 'Classic', image: 'images/books/foundation.png', summary: 'The Galactic Empire has ruled for twelve thousand years. But Hari Seldon, a psychohistorian, can see the future—a dark age of ignorance, barbarism, and warfare that will last thirty thousand years. To preserve knowledge and save humanity, Seldon gathers the best minds on a bleak planet at the edge of the galaxy to serve as a beacon of hope for future generations.', reasons: ['A monumental classic of science fiction with an epic sense of scale.', 'Explores fascinating ideas about history, society, and the fall of civilizations.', 'A timeless story that has influenced generations of sci-fi writers.'] },
+{ id: 34, title: 'Outliers', author: 'Malcolm Gladwell', category: 'Non-Fiction', price: 12000, badge: '', image: 'images/books/outliers.png', summary: 'Malcolm Gladwell takes us on an intellectual journey through the world of "outliers"—the best and the brightest, the most famous and the most successful. He argues that we pay too much attention to what successful people are like, and too little attention to where they are from: their culture, their family, their generation, and the idiosyncratic experiences of their upbringing.', reasons: ['A fascinating look at what makes high-achievers different.', 'Challenges conventional notions of success by highlighting the importance of opportunity and culture.', 'Gladwell\'s storytelling makes complex ideas about success accessible and entertaining.'] },
+{ id: 35, title: 'The Night Circus', author: 'Erin Morgenstern', category: 'Fiction', price: 12000, badge: '', image: 'images/books/night-circus.png', summary: 'A mysterious circus arrives without warning, open only at night. Behind the scenes, a fierce competition is underway between two young magicians, Celia and Marco, who have been trained since childhood for a magical duel. Unbeknownst to them, this is a game in which only one can be left standing.', reasons: ['A magical, enchanting, and atmospheric novel that will transport you to another world.', 'The writing is lush and descriptive, creating a truly immersive experience.', 'A beautiful and unique love story set against a backdrop of breathtaking magic.'] },
+{ id: 36, title: 'The Subtle Art of Not Giving a F*ck', author: 'Mark Manson', category: 'Self-Help', price: 4400, badge: 'Bestseller', image: 'images/books/subtle-art.png', summary: 'In this generation-defining self-help guide, a superstar blogger cuts through the crap to show us how to stop trying to be "positive" all the time so that we can truly become better, happier people. A much-needed dose of raw, refreshing, honest truth.', reasons: ['A counterintuitive approach to living a good life that is both hilarious and wise.', 'Teaches you to focus on what truly matters and let go of everything else.', 'A perfect read for anyone tired of the "positive thinking" mantra.'] },
+{ id: 37, title: 'Red, White & Royal Blue', author: 'Casey McQuiston', category: 'Romance', price: 12000, badge: '', image: 'images/books/red-white-royal-blue.png', summary: 'What happens when America\'s First Son falls in love with a British prince? Alex Claremont-Diaz finds himself in a secret romance with Prince Henry that could derail his mother\'s presidential campaign and upend two nations. A story about love, duty, and finding the courage to be yourself.', reasons: ['A funny, smart, and incredibly charming romance that will make you believe in love.', 'Filled with witty banter, heartfelt moments, and fantastic characters.', 'A hopeful and uplifting story that is pure joy to read.'] },
+{ id: 38, title: 'The Hobbit', author: 'J.R.R. Tolkien', category: 'Fiction', price: 12000, badge: 'Classic', image: 'images/books/hobbit.png', summary: 'The enchanting prequel to The Lord of the Rings. Bilbo Baggins is a comfort-loving hobbit who is whisked away on an epic quest by the wizard Gandalf and a company of dwarves. Their goal: to reclaim a stolen treasure from the fearsome dragon, Smaug.', reasons: ['The perfect introduction to the magical world of Middle-earth.', 'A timeless adventure filled with heroism, friendship, and courage.', 'A classic tale that can be enjoyed by readers of all ages.'] },
+{ id: 39, title: 'Long Live the Pumpkin Queen', author: 'Shea Ernshaw', category: 'Fiction', price: 12000, badge: 'New', image: 'images/books/pumpkin-queen.png', summary: 'A sequel to Tim Burton\'s The Nightmare Before Christmas. Sally, now married to Jack Skellington, is the Pumpkin Queen of Halloween Town. When she accidentally unleashes a long-hidden curse, she must venture into the other Holiday Worlds to find a solution and save her home.', reasons: ['A must-read for fans of The Nightmare Before Christmas.', 'Perfectly captures the gothic charm and whimsical spirit of the original film.', 'An exciting new adventure that expands the beloved holiday universe.'] },
+{ id: 40, title: 'A Brief History of Time', author: 'Stephen Hawking', category: 'Non-Fiction', price: 12000, badge: 'Classic', image: 'images/books/brief-history-of-time.png', summary: 'A landmark volume in science writing by one of the great minds of our time. Stephen Hawking explains the universe in terms we can all understand, from the big bang to black holes. A book that demystifies the cosmos and reveals its wonders.', reasons: ['Makes the most complex ideas in physics and cosmology accessible to the layperson.', 'A fascinating journey to the frontiers of human knowledge, guided by a brilliant mind.', 'Will change your understanding of the universe and our place within it.'] },
+{ id: 41, title: 'Things Fall Apart', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/things-fall-apart.png', summary: 'A classic of world literature, this novel tells the story of Okonkwo, a proud and respected leader in an Igbo community in Nigeria. His life is irrevocably altered by the arrival of Christian missionaries and colonial authorities, leading to a tragic clash between cultures.', reasons: ['A powerful and authentic depiction of Igbo society before and during the colonial era.', 'The foundational novel of modern African literature.', 'A poignant and timeless story about cultural identity, change, and tragedy.'] },
+{ id: 42, title: 'Half of a Yellow Sun', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/half-of-a-yellow-sun.png', summary: 'Set during the Nigerian-Biafran War, this epic novel follows the interconnected lives of five characters—a university professor, his wealthy girlfriend, a British writer, a houseboy, and his twin sister. A story of love, war, and the devastating impact of colonialism.', reasons: ['A sweeping historical epic that brings a pivotal moment in Nigerian history to life.', 'Features unforgettable characters and a deeply moving narrative.', 'A masterpiece of storytelling that explores the human cost of conflict.'] },
+{ id: 43, title: 'Americanah', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 8500, badge: 'Award Winner', image: 'images/books/americanah.png', summary: 'Ifemelu and Obinze are young and in love when they depart military-ruled Nigeria. Ifemelu heads for America, where she grapples with race and identity for the first time. Obinze, unable to join her, plunges into a dangerous, undocumented life in London. A powerful story of love, race, and the immigrant experience.', reasons: ['A sharp, funny, and insightful novel about identity in a globalized world.', 'Offers a brilliant and honest commentary on race in America from an African perspective.', 'A beautiful love story that spans years and continents.'] },
+{ id: 44, title: 'Purple Hibiscus', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 6000, badge: '', image: 'images/books/purple-hibiscus.png', summary: 'A coming-of-age story about Kambili, a 15-year-old girl living in Nigeria under the oppressive rule of her devoutly Catholic and tyrannical father. When she and her brother are sent to stay with their aunt, they discover a world of laughter, freedom, and love that will change them forever.', reasons: ['A powerful and beautifully written debut novel.', 'A moving exploration of family, faith, and the courage to find one\'s own voice.', 'Adichie\'s prose is stunning, capturing both the beauty and brutality of Kambili\'s world.'] },
+{ id: 45, title: 'Stay With Me', author: 'Ayọ̀bámi Adébáyọ̀', category: 'African', price: 12000, badge: '', image: 'images/books/stay-with-me.png', summary: 'Yejide and Akin have been married for years, but their inability to conceive a child puts immense pressure on their union. When Akin\'s family insists he take a second wife, a series of desperate choices and devastating secrets threatens to tear their world apart. A heartbreaking portrait of a marriage in modern Nigeria.', reasons: ['A powerful and emotionally intense story about love, loss, and the desperation of infertility.', 'The dual perspectives of both husband and wife create a complex and gripping narrative.', 'A stunning debut that is both a page-turner and a work of profound literary merit.'] },
+{ id: 46, title: 'The Fishermen', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/fishermen.png', summary: 'In a small Nigerian town, four young brothers take up fishing at a forbidden river. There, they encounter a local madman whose terrifying prophecy about the oldest brother sets in motion a tragic chain of events that shatters their family. A modern-day Cain and Abel story of immense power.', reasons: ['A stunning and tragic tale of brotherhood and fate.', 'Obioma\'s writing is rich with Igbo cosmology and mythic language.', 'A heartbreaking and unforgettable novel that reads like a classic tragedy.'] },
+{ id: 47, title: 'An Orchestra of Minorities', author: 'Chigozie Obioma', category: 'African', price: 12000, badge: '', image: 'images/books/orchestra-of-minorities.png', summary: 'Narrated by a guardian spirit, this novel tells the story of Chinonso, a young poultry farmer in Nigeria. When he falls in love with a woman from a wealthy family, he sacrifices everything to gain an education abroad, only to be betrayed in the most devastating way. A contemporary twist on Homer\'s Odyssey.', reasons: ['A heartbreaking epic about love, sacrifice, and cosmic injustice.', 'The unique narration, based on Igbo cosmology, makes for a truly original reading experience.', 'A powerful and beautifully crafted novel of immense emotional depth.'] },
+{ id: 48, title: 'We Need New Names', author: 'NoViolet Bulawayo', category: 'African', price: 12000, badge: '', image: 'images/books/we-need-new-names.png', summary: 'The story of Darling, a ten-year-old girl living in a shantytown in Zimbabwe. She and her friends dream of escaping to a paradise like America. But when Darling gets the chance to live in Detroit, she finds that the reality of immigration is far from her childhood dreams.', reasons: ['A vibrant and unforgettable coming-of-age story.', 'Bulawayo\'s voice is fresh, energetic, and utterly unique.', 'A powerful exploration of childhood, displacement, and the dream of a better life.'] },
+{ id: 49, title: 'Nervous Conditions', author: 'Tsitsi Dangarembga', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/nervous-conditions.png', summary: 'A landmark of African and feminist literature. The novel follows Tambu, a young girl in colonial Rhodesia (now Zimbabwe) who yearns for an education. Her journey reveals the complex intersection of race, class, gender, and colonialism in shaping a young woman\'s life.', reasons: ['A powerful and essential work of post-colonial feminist fiction.', 'An insightful exploration of the "nervous conditions" that arise from living under oppression.', 'A timeless coming-of-age story about the fight for education and self-determination.'] },
+{ id: 50, title: 'The Joys of Motherhood', author: 'Buchi Emecheta', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/joys-of-motherhood.png', summary: 'A classic of African literature that tells the tragic story of Nnu Ego, a Nigerian woman who devotes her life to her children. The novel offers a powerful critique of the traditional patriarchal values that define a woman solely by her ability to bear sons, set against the backdrop of a rapidly changing colonial Nigeria.', reasons: ['A groundbreaking and honest portrayal of womanhood and motherhood in a patriarchal society.', 'A powerful feminist novel that challenges traditional gender roles.', 'An essential read for understanding the complexities of tradition and modernity in Nigeria.'] },
+{ id: 51, title: 'Arrow of God', author: 'Chinua Achebe', category: 'African', price: 9500, badge: 'Classic', image: 'images/books/arrow-of-god.png', summary: 'Part of Achebe\'s masterful African Trilogy, this novel is set in 1920s Nigeria. It tells the story of Ezeulu, the chief priest of the god Ulu, who finds his authority challenged by both internal rivals and the encroaching power of British colonial administrators and Christian missionaries.', reasons: ['A brilliant and complex novel about power, faith, and cultural conflict.', 'Achebe\'s masterful prose brings the world of colonial Nigeria to life.', 'A profound exploration of the intersection between spiritual and political power.'] },
+{ id: 52, title: 'Born a Crime', author: 'Trevor Noah', category: 'African', price: 12000, badge: 'Bestseller', image: 'images/books/born-a-crime.png', summary: 'The memoir of The Daily Show host Trevor Noah, born in apartheid South Africa to a black Xhosa mother and a white Swiss father. His very existence was a crime. A funny, moving, and insightful story of a mischievous young boy who grows into a restless young man as he struggles to find himself in a world where he was never supposed to exist.', reasons: ['A hilarious and heartbreaking look at life during apartheid.', 'A powerful tribute to the author\'s fearless, rebellious, and deeply religious mother.', 'Offers a unique and personal perspective on race, identity, and resilience.'] },
+{ id: 53, title: 'The Secret Lives of Baba Segi\'s Wives', author: 'Lola Shoneyin', category: 'African', price: 10000, badge: '', image: 'images/books/baba-segi-wives.png', summary: 'Baba Segi is a wealthy, polygamous man with three wives and many children. When he takes a fourth, university-educated wife, Bolanle, her inability to conceive a child exposes the long-held secrets and resentments simmering within the household. A dramatic and insightful look into a modern polygamous family.', reasons: ['A lively, funny, and compelling story of jealousy, rivalry, and sisterhood.', 'Offers a fascinating glimpse into the dynamics of a polygamous household.', 'The multiple perspectives of the wives create a rich and layered narrative.'] },
+{ id: 54, title: 'Homegoing', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: 'Award Winner', image: 'images/books/homegoing.png', summary: 'An epic novel that follows the parallel paths of two half-sisters, separated by circumstance in 18th-century Ghana. One will marry an Englishman and live in comfort in the Cape Coast Castle. The other will be imprisoned in the very same castle, sold into slavery, and shipped to America. The story follows their descendants through 300 years of history.', reasons: ['A stunningly ambitious and powerful debut.', 'A masterful and heartbreaking exploration of the legacy of slavery in both Africa and America.', 'Each chapter is a self-contained story, making for a unique and compelling reading experience.'] },
+{ id: 55, title: 'Transcendent Kingdom', author: 'Yaa Gyasi', category: 'African', price: 12000, badge: '', image: 'images/books/transcendent-kingdom.png', summary: 'Gifty is a sixth-year PhD candidate in neuroscience, studying reward-seeking behavior in mice. Her research is deeply personal, driven by her brother\'s fatal heroin overdose and her mother\'s debilitating depression. A deeply moving portrait of a Ghanaian immigrant family ravaged by depression, addiction, and grief.', reasons: ['A profound and powerful novel about faith, science, and family.', 'An intimate and heartbreaking exploration of grief and the search for meaning.', 'Yaa Gyasi\'s writing is precise, intelligent, and deeply compassionate.'] },
+{ id: 56, title: 'The Thing Around Your Neck', author: 'Chimamanda Ngozi Adichie', category: 'African', price: 10500, badge: '', image: 'images/books/thing-around-your-neck.png', summary: 'A brilliant collection of twelve short stories that explore the lives of Nigerians at home and in the United States. Adichie illuminates the complexities of the immigrant experience, the bonds of family, and the collision of cultures with her characteristic wisdom and empathy.', reasons: ['A stunning collection from one of the world\'s most important writers.', 'Each story is a perfectly crafted gem, full of insight and emotional depth.', 'Explores the universal themes of identity, belonging, and the search for home.'] },
+{ id: 57, title: 'My Sister, the Serial Killer', author: 'Oyinkan Braithwaite', category: 'African', price: 5200, badge: 'Popular', image: 'images/books/my-sister-the-serial-killer.png', summary: 'Korede is a nurse whose life is constantly being interrupted by her beautiful, charismatic younger sister, Ayoola, who has a bad habit of killing her boyfriends. Korede is always there to clean up the mess, but her loyalty is tested when Ayoola starts dating the doctor she has long been in love with.', reasons: ['A wickedly funny and sharp satirical thriller.', 'A quick, compulsive read that is both dark and entertaining.', 'Explores the complex and often toxic bonds of sisterly loyalty.'] },
+{ id: 58, title: 'Ghana Must Go', author: 'Taiye Selasi', category: 'African', price: 12000, badge: '', image: 'images/books/ghana-must-go.png', summary: 'The story of the Sai family, shattered by the departure of their brilliant surgeon father, Kweku. Years later, his sudden death brings the family back together, forcing them to confront the secrets and betrayals that tore them apart. A beautifully written novel about family, identity, and the immigrant experience.', reasons: ['A stunning and lyrical novel with prose that reads like poetry.', 'A powerful exploration of the complexities of family and the pain of abandonment.', 'A brilliant portrait of the modern African diaspora.'] },
+{ id: 59, title: 'The Beautiful Ones Are Not Yet Born', author: 'Ayi Kwei Armah', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/beautiful-ones.png', summary: 'A classic of African literature set in post-independence Ghana. The novel follows an unnamed man who struggles to maintain his integrity in a society rife with corruption, materialism, and moral decay. A powerful and unflinching critique of the disillusionment that followed the dream of independence.', reasons: ['A powerful and searing indictment of political corruption.', 'Armah\'s rich, descriptive prose creates a vivid and visceral world.', 'A challenging but essential read for understanding the post-colonial African experience.'] },
+{ id: 60, title: 'Children of Blood and Bone', author: 'Tomi Adeyemi', category: 'African', price: 12000, badge: 'Popular', image: 'images/books/children-of-blood-and-bone.png', summary: 'Zélie Adebola remembers when the soil of Orïsha hummed with magic. But everything changed when a ruthless king ordered all maji killed, leaving Zélie and her people without hope. Now, Zélie has one chance to bring magic back and strike against the monarchy in this West African-inspired fantasy.', reasons: ['A thrilling and action-packed fantasy inspired by Nigerian mythology.', 'A powerful allegory for social justice, racism, and oppression.', 'The start of an epic Young Adult series you won\'t want to miss.'] }
 ];
 
     let cart = [];
@@ -1744,15 +2038,4 @@
     });
     </script>
 </body>
-</html>info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-        }
-
-        .cart-item-title {
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        .cart-item-
+</html>
