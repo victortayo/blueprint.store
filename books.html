@@ -288,7 +288,7 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            background-image: url('images/bp (5).jpeg');
+            background-image: url('images/bp-homepage.jpeg');
             background-size: cover;
             display: flex;
             align-items: center;
@@ -385,11 +385,11 @@
         .carousel {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            width: 700%;
+            width: 800%;
         }
 
         .carousel-item {
-            width: calc(100% / 7);
+            width: calc(100% / 8);
             height: 550px;
             border-radius: 12px;
             margin: 0 1rem;
@@ -471,7 +471,10 @@
             background-image: url('images/bp (9).jpeg');
             background-size: cover;
         }
-
+        .carousel-item:nth-child(8) { 
+            background-image: url('images/bp-entrepreneurship.jpeg');
+            background-size: cover;
+        }
         .carousel-nav {
             position: absolute;
             top: 50%;
@@ -1254,6 +1257,12 @@
                         <div class="carousel-subtitle">Stories from the motherland</div>
                     </div>
                 </div>
+                <div class="carousel-item" onclick="filterByCategory('Entrepreneurship')">
+                    <div class="carousel-content">
+                        <div class="carousel-title">Entrepreneurship</div>
+                        <div class="carousel-subtitle">Build your business empire</div>
+                    </div>
+                </div>
             </div>
             
             <button class="carousel-nav prev" onclick="previousSlide()">‹</button>
@@ -1283,6 +1292,7 @@
                 <button class="filter-btn" onclick="filterByCategory('Self-Help')">Self-Help</button>
                 <button class="filter-btn" onclick="filterByCategory('Biography')">Biography</button>
                 <button class="filter-btn" onclick="filterByCategory('History')">History</button>
+                <button class="filter-btn" onclick="filterByCategory('Entrepreneurship')">Entrepreneurship</button>
             </div>
 
             <div class="book-grid" id="book-grid"></div>
@@ -1762,14 +1772,207 @@
 { id: 57, title: 'My Sister, the Serial Killer', author: 'Oyinkan Braithwaite', category: 'African', price: 5200, badge: 'Popular', image: 'images/books/my-sister-the-serial-killer.png', summary: 'Korede is a nurse whose life is constantly being interrupted by her beautiful, charismatic younger sister, Ayoola, who has a bad habit of killing her boyfriends. Korede is always there to clean up the mess, but her loyalty is tested when Ayoola starts dating the doctor she has long been in love with.', reasons: ['A wickedly funny and sharp satirical thriller.', 'A quick, compulsive read that is both dark and entertaining.', 'Explores the complex and often toxic bonds of sisterly loyalty.'] },
 { id: 58, title: 'Ghana Must Go', author: 'Taiye Selasi', category: 'African', price: 12000, badge: '', image: 'images/books/ghana-must-go.png', summary: 'The story of the Sai family, shattered by the departure of their brilliant surgeon father, Kweku. Years later, his sudden death brings the family back together, forcing them to confront the secrets and betrayals that tore them apart. A beautifully written novel about family, identity, and the immigrant experience.', reasons: ['A stunning and lyrical novel with prose that reads like poetry.', 'A powerful exploration of the complexities of family and the pain of abandonment.', 'A brilliant portrait of the modern African diaspora.'] },
 { id: 59, title: 'The Beautiful Ones Are Not Yet Born', author: 'Ayi Kwei Armah', category: 'African', price: 12000, badge: 'Classic', image: 'images/books/beautiful-ones.png', summary: 'A classic of African literature set in post-independence Ghana. The novel follows an unnamed man who struggles to maintain his integrity in a society rife with corruption, materialism, and moral decay. A powerful and unflinching critique of the disillusionment that followed the dream of independence.', reasons: ['A powerful and searing indictment of political corruption.', 'Armah\'s rich, descriptive prose creates a vivid and visceral world.', 'A challenging but essential read for understanding the post-colonial African experience.'] },
-{ id: 60, title: 'Children of Blood and Bone', author: 'Tomi Adeyemi', category: 'African', price: 12000, badge: 'Popular', image: 'images/books/children-of-blood-and-bone.png', summary: 'Zélie Adebola remembers when the soil of Orïsha hummed with magic. But everything changed when a ruthless king ordered all maji killed, leaving Zélie and her people without hope. Now, Zélie has one chance to bring magic back and strike against the monarchy in this West African-inspired fantasy.', reasons: ['A thrilling and action-packed fantasy inspired by Nigerian mythology.', 'A powerful allegory for social justice, racism, and oppression.', 'The start of an epic Young Adult series you won\'t want to miss.'] }
+{ id: 60, title: 'Children of Blood and Bone', author: 'Tomi Adeyemi', category: 'African', price: 12000, badge: 'Popular', image: 'images/books/children-of-blood-and-bone.png', summary: 'Zélie Adebola remembers when the soil of Orïsha hummed with magic. But everything changed when a ruthless king ordered all maji killed, leaving Zélie and her people without hope. Now, Zélie has one chance to bring magic back and strike against the monarchy in this West African-inspired fantasy.', reasons: ['A thrilling and action-packed fantasy inspired by Nigerian mythology.', 'A powerful allegory for social justice, racism, and oppression.', 'The start of an epic Young Adult series you won\'t want to miss.'] },
+// Add these to your books array in the JavaScript section
+
+{ 
+    id: 61, 
+    title: 'The Lean Startup', 
+    author: 'Eric Ries', 
+    category: 'Entrepreneurship', 
+    price: 12000, 
+    badge: 'Bestseller', 
+    image: 'images/books/lean-startup.png',
+    summary: 'A revolutionary approach to building startups by using validated learning, rapid experimentation, and iterative product releases to shorten development cycles and discover what customers really want. Eric Ries introduces a scientific methodology for creating and managing successful startups in an age of uncertainty.',
+    reasons: [
+        'Learn the Build-Measure-Learn feedback loop that has become the gold standard for startups worldwide.',
+        'Discover how to pivot or persevere based on real customer feedback, not assumptions.',
+        'Perfect for both tech startups and traditional businesses looking to innovate faster and smarter.'
+    ]
+},
+
+{ 
+    id: 62, 
+    title: 'Zero to One', 
+    author: 'Peter Thiel', 
+    category: 'Entrepreneurship', 
+    price: 10500, 
+    badge: 'Popular', 
+    image: 'images/books/zero-to-one.png',
+    summary: 'PayPal co-founder and legendary investor Peter Thiel shows how to build companies that create entirely new things rather than compete in existing markets. A contrarian guide that challenges everything you think you know about business and innovation. Going from zero to one means creating something that has never existed before.',
+    reasons: [
+        'Learn why creating a monopoly business is better than competing in crowded markets.',
+        'Discover the seven questions every business must answer to achieve breakthrough success.',
+        'Get insights from one of Silicon Valley\'s most successful entrepreneurs and investors.'
+    ]
+},
+
+{ 
+    id: 63, 
+    title: 'The $100 Startup', 
+    author: 'Chris Guillebeau', 
+    category: 'Entrepreneurship', 
+    price: 8500, 
+    badge: 'Popular', 
+    image: 'images/books/100-startup.png',
+    summary: 'Chris Guillebeau studied 1,500 individuals who built businesses earning $50,000 or more from a modest investment of $100 or less. This book shows you how to turn your passion and skills into income, featuring dozens of case studies of everyday people who created freedom and income on their own terms.',
+    reasons: [
+        'Perfect for aspiring entrepreneurs who want to start small without loans or investors.',
+        'Learn the three-step process to launch a profitable microbusiness in 30 days or less.',
+        'Packed with real-world examples of ordinary people creating extraordinary businesses with minimal capital.'
+    ]
+},
+
+{ 
+    id: 64, 
+    title: 'Shoe Dog', 
+    author: 'Phil Knight', 
+    category: 'Entrepreneurship', 
+    price: 12000, 
+    badge: 'Bestseller', 
+    image: 'images/books/shoe-dog.png',
+    summary: 'The founder and CEO of Nike shares the inside story of the company\'s early days as an intrepid start-up and its evolution into one of the world\'s most iconic brands. A raw, candid memoir about the risks, setbacks, and triumphs of building a global empire from nothing.',
+    reasons: [
+        'An inspiring and honest account of entrepreneurship from one of the greatest business minds.',
+        'Learn about the persistence, grit, and creativity required to build a world-class brand.',
+        'Phil Knight\'s storytelling makes you feel like you\'re right there in the trenches with him.'
+    ]
+},
+
+{ 
+    id: 65, 
+    title: 'The Hard Thing About Hard Things', 
+    author: 'Ben Horowitz', 
+    category: 'Entrepreneurship', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/hard-thing.png',
+    summary: 'Silicon Valley veteran Ben Horowitz offers essential advice on building and running a startup—practical wisdom for managing the toughest problems business schools don\'t cover. A brutally honest guide about the real challenges of entrepreneurship, from layoffs to demotions to navigating the edge of bankruptcy.',
+    reasons: [
+        'The most honest book about what it\'s really like to lead a company through crisis.',
+        'Learn how to make decisions when there are no easy answers and every choice seems wrong.',
+        'Essential reading for CEOs, founders, and anyone responsible for leading through difficult times.'
+    ]
+},
+
+{ 
+    id: 66, 
+    title: 'Start with Why', 
+    author: 'Simon Sinek', 
+    category: 'Entrepreneurship', 
+    price: 11000, 
+    badge: 'Popular', 
+    image: 'images/books/start-with-why.png',
+    summary: 'Simon Sinek reveals that the most influential leaders and organizations think, act, and communicate the exact same way—starting with WHY. He shows that people don\'t buy what you do; they buy why you do it. A powerful framework for building businesses and movements that inspire.',
+    reasons: [
+        'Discover the Golden Circle framework that has transformed how businesses communicate their value.',
+        'Learn why some companies and leaders inspire loyalty while others struggle to gain traction.',
+        'Perfect for entrepreneurs who want to build brands that people believe in, not just buy from.'
+    ]
+},
+
+{ 
+    id: 67, 
+    title: 'Blitzscaling', 
+    author: 'Reid Hoffman & Chris Yeh', 
+    category: 'Entrepreneurship', 
+    price: 12000, 
+    badge: '', 
+    image: 'images/books/blitzscaling.png',
+    summary: 'LinkedIn co-founder Reid Hoffman reveals the strategies that allow companies to grow from startup to global market leader at lightning speed. Blitzscaling is what you do when you need to grow really, really quickly, prioritizing speed over efficiency in the face of uncertainty.',
+    reasons: [
+        'Learn the counterintuitive rules for scaling a company at breakneck speed.',
+        'Discover how companies like Airbnb, Netflix, and Facebook achieved massive scale.',
+        'Essential for founders who want to dominate their market before competitors catch up.'
+    ]
+},
+
+{ 
+    id: 68, 
+    title: 'The Mom Test', 
+    author: 'Rob Fitzpatrick', 
+    category: 'Entrepreneurship', 
+    price: 9000, 
+    badge: '', 
+    image: 'images/books/mom-test.png',
+    summary: 'How to talk to customers and learn if your business is a good idea when everyone is lying to you. Rob Fitzpatrick teaches you the right questions to ask potential customers so you can figure out if your product is worth building—even your mom can\'t lie to you if you ask the right way.',
+    reasons: [
+        'Learn how to get honest feedback instead of polite lies that lead you astray.',
+        'Master the art of customer conversations that reveal the truth about your business idea.',
+        'A short, practical guide that every entrepreneur should read before building anything.'
+    ]
+},
+
+{ 
+    id: 69, 
+    title: 'Traction', 
+    author: 'Gabriel Weinberg & Justin Mares', 
+    category: 'Entrepreneurship', 
+    price: 10500, 
+    badge: '', 
+    image: 'images/books/traction.png',
+    summary: 'Most startups don\'t fail because they can\'t build a product. They fail because they can\'t get traction. This book introduces the Bullseye Framework, a five-step process that helps you find the marketing channel that will get you traction. Features advice from the founders of Dropbox, Wikipedia, WordPress, and more.',
+    reasons: [
+        'Learn 19 different channels for acquiring customers and how to test them systematically.',
+        'Discover why successful startups spend 50% of their time on product and 50% on traction.',
+        'A practical, no-nonsense guide to growing your customer base and revenue.'
+    ]
+},
+
+{ 
+    id: 70, 
+    title: 'Rework', 
+    author: 'Jason Fried & David Heinemeier Hansson', 
+    category: 'Entrepreneurship', 
+    price: 9500, 
+    badge: '', 
+    image: 'images/books/rework.png',
+    summary: 'The founders of Basecamp challenge conventional business wisdom with a radically different approach to building a successful company. They show that workaholism, meetings, and long-term planning are overrated. A manifesto for doing business differently and building a company on your own terms.',
+    reasons: [
+        'Learn why less is often more when it comes to building a profitable business.',
+        'Discover unconventional strategies that let you work smarter, not harder.',
+        'Short, punchy chapters make this one of the most readable business books ever written.'
+    ]
+},
+
+{ 
+    id: 71, 
+    title: 'The E-Myth Revisited', 
+    author: 'Michael E. Gerber', 
+    category: 'Entrepreneurship', 
+    price: 8000, 
+    badge: 'Classic', 
+    image: 'images/books/e-myth.png',
+    summary: 'Michael Gerber dispels the myths surrounding starting your own business and shows how most small businesses fail because their owners are working IN their business instead of ON it. He walks you through the steps to creating a business that works for you, not the other way around.',
+    reasons: [
+        'Understand the difference between working as a technician versus building a system that runs itself.',
+        'Learn how to create processes and systems that make your business scalable and sellable.',
+        'A timeless classic that has helped millions of entrepreneurs avoid common pitfalls.'
+    ]
+},
+
+{ 
+    id: 72, 
+    title: 'The Innovator\'s Dilemma', 
+    author: 'Clayton M. Christensen', 
+    category: 'Entrepreneurship', 
+    price: 12000, 
+    badge: 'Classic', 
+    image: 'images/books/innovators-dilemma.png',
+    summary: 'Harvard Business School professor Clayton Christensen explains why great companies can do everything right and still lose their market leadership—or even fail. He introduces the concept of "disruptive innovation" and shows how established companies can avoid being displaced by upstarts.',
+    reasons: [
+        'Understand why market leaders often miss the next big thing even when they see it coming.',
+        'Learn how to identify disruptive innovations before they destroy your business.',
+        'A groundbreaking book that changed how we think about innovation and competition.'
+    ]
+}
 ];
 
     let cart = [];
     let currentSlide = 0;
     let currentCategory = 'All';
     let searchQuery = '';
-    const totalSlides = 7;
+    const totalSlides = 8;
 
     function generateBookColor(index) {
         const colors = [
