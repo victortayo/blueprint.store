@@ -1100,10 +1100,50 @@
             vertical-align: middle;
         }
 
+
+/* Back to Top Button */
+            .back-to-top {
+                position: fixed;
+                bottom: 40px;
+                right: 40px;
+                width: 55px;
+                height: 55px;
+                background: #D4AF37;
+                color: #1a1a1a;
+                border: none;
+                border-radius: 50%;
+                font-size: 1.5rem;
+                cursor: pointer;
+                box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .back-to-top.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .back-to-top:hover {
+                background: #c9a02c;
+                transform: translateY(-5px);
+                box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6);
+            }
+
+            .back-to-top:active {
+                transform: translateY(-2px);
+            }
+
+
         @media (max-width: 768px) {
             .hero { 
                 padding: 1rem; 
-                background-position: 80% 70%;
+                background-position: 10% 70%;
             }
             .book-grid { 
                 grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -1148,6 +1188,14 @@
                 top: 1rem;
                 right: 1rem;
             }
+
+                .back-to-top {
+                    bottom: 20px;
+                    right: 20px;
+                    width: 50px;
+                    height: 50px;
+                    font-size: 1.3rem;
+                }
         }
     </style>
 </head>
@@ -1281,19 +1329,19 @@
                 <span class="search-icon">🔍</span>
             </div>
 
-            <div class="category-filter">
-                <button class="filter-btn active" onclick="filterByCategory('All')">All Books</button>
-                <button class="filter-btn" onclick="filterByCategory('African')">African Literature</button>
-                <button class="filter-btn" onclick="filterByCategory('Fiction')">Fiction</button>
-                <button class="filter-btn" onclick="filterByCategory('Non-Fiction')">Non-Fiction</button>
-                <button class="filter-btn" onclick="filterByCategory('Mystery')">Mystery</button>
-                <button class="filter-btn" onclick="filterByCategory('Sci-Fi')">Sci-Fi</button>
-                <button class="filter-btn" onclick="filterByCategory('Romance')">Romance</button>
-                <button class="filter-btn" onclick="filterByCategory('Self-Help')">Self-Help</button>
-                <button class="filter-btn" onclick="filterByCategory('Biography')">Biography</button>
-                <button class="filter-btn" onclick="filterByCategory('History')">History</button>
-                <button class="filter-btn" onclick="filterByCategory('Entrepreneurship')">Entrepreneurship</button>
-            </div>
+    <div class="category-filter">
+        <button class="filter-btn active" onclick="filterByCategory('All')">All Books</button>
+        <button class="filter-btn" onclick="filterByCategory('African')">🌍 African Literature</button>
+        <button class="filter-btn" onclick="filterByCategory('Entrepreneurship')">💼 Entrepreneurship</button>
+        <button class="filter-btn" onclick="filterByCategory('Fiction')">Fiction</button>
+        <button class="filter-btn" onclick="filterByCategory('Non-Fiction')">Non-Fiction</button>
+        <button class="filter-btn" onclick="filterByCategory('Mystery')">Mystery</button>
+        <button class="filter-btn" onclick="filterByCategory('Sci-Fi')">Sci-Fi</button>
+        <button class="filter-btn" onclick="filterByCategory('Romance')">Romance</button>
+        <button class="filter-btn" onclick="filterByCategory('Self-Help')">Self-Help</button>
+        <button class="filter-btn" onclick="filterByCategory('Biography')">Biography</button>
+        <button class="filter-btn" onclick="filterByCategory('History')">History</button>
+    </div>
 
             <div class="book-grid" id="book-grid"></div>
         </div>
@@ -1327,6 +1375,12 @@
             <div class="copyright">© 2025 blueprint. All Rights Reserved.</div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to top">
+        ↑
+    </button>
+
 
     <script>
     function toggleMobileMenu() {
@@ -1999,10 +2053,11 @@
 
         grid.innerHTML = booksToShow.map((book, index) => `
             <div class="book-card">
-                <div class="book-image" style="${book.image ? '' : `background: ${generateBookColor(index)}`}">
-                    ${book.image ? `<img src="${book.image}" alt="${book.title}" onerror="this.style.display='none'; this.parentElement.style.background='${generateBookColor(index)}'">` : ''}
-                    ${book.badge ? `<div class="book-badge">${book.badge}</div>` : ''}
-                </div>
+            <div class="book-image" style="${book.image ? '' : `background: ${generateBookColor(index)}`}">
+                ${book.image ? `<img src="${book.image}" alt="${book.title}" onerror="this.style.display='none'; this.parentElement.style.background='${generateBookColor(index)}'">` : ''}
+                ${book.badge ? `<div class="book-badge">${book.badge}</div>` : ''}
+                ${(book.category === 'African' || book.category === 'Entrepreneurship') ? '<div class="book-badge" style="left: 12px; right: auto; background: #10b981;">⭐</div>' : ''}
+            </div>
                 <div class="book-info">
                     <div class="book-category">${book.category}</div>
                     <div class="book-title">${book.title}</div>
@@ -2015,23 +2070,85 @@
         `).join('');
     }
 
-    function filterBooks() {
-        let filteredBooks = books;
+function filterBooks() {
+    let filteredBooks = books;
 
-        if (currentCategory !== 'All') {
-            filteredBooks = filteredBooks.filter(book => book.category === currentCategory);
-        }
-
-        if (searchQuery) {
-            filteredBooks = filteredBooks.filter(book => 
-                book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                book.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                book.category.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-        }
-
-        renderBooks(filteredBooks);
+    if (currentCategory !== 'All') {
+        filteredBooks = filteredBooks.filter(book => book.category === currentCategory);
     }
+
+    if (searchQuery) {
+        filteredBooks = filteredBooks.filter(book => 
+            book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            book.author.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            book.category.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }
+
+    // Only apply priority sorting when viewing "All Books"
+    if (currentCategory === 'All' && !searchQuery) {
+        // Define priority order
+        const priorityOrder = {
+            'African': 1,
+            'Entrepreneurship': 2,
+            'Non-Fiction': 3,
+            'Self-Help': 4,
+            'Fiction': 5,
+            'Romance': 6,
+            'Mystery': 7,
+            'Sci-Fi': 8,
+            'Biography': 9,
+            'History': 10
+        };
+        
+        // Sort books by priority
+        filteredBooks.sort((a, b) => {
+            const aPriority = priorityOrder[a.category] || 999;
+            const bPriority = priorityOrder[b.category] || 999;
+            
+            if (aPriority !== bPriority) {
+                return aPriority - bPriority;
+            }
+            
+            return a.id - b.id; // Keep original order within same category
+        });
+        
+        // Now create a mixed display pattern
+        const categoryGroups = {};
+        filteredBooks.forEach(book => {
+            if (!categoryGroups[book.category]) {
+                categoryGroups[book.category] = [];
+            }
+            categoryGroups[book.category].push(book);
+        });
+        
+        // Mix books: take 1-2 from each category in priority order
+        const mixedBooks = [];
+        const orderedCategories = Object.keys(priorityOrder).sort((a, b) => 
+            priorityOrder[a] - priorityOrder[b]
+        );
+        
+        let maxIterations = Math.max(...Object.values(categoryGroups).map(arr => arr.length));
+        
+        for (let i = 0; i < maxIterations; i++) {
+            orderedCategories.forEach(category => {
+                if (categoryGroups[category] && categoryGroups[category][i]) {
+                    mixedBooks.push(categoryGroups[category][i]);
+                }
+                // For top priority categories, add a second book if available
+                if ((category === 'African' || category === 'Entrepreneurship') && 
+                    categoryGroups[category] && categoryGroups[category][i + 1]) {
+                    mixedBooks.push(categoryGroups[category][i + 1]);
+                    i++; // Skip next iteration for this category
+                }
+            });
+        }
+        
+        filteredBooks = mixedBooks;
+    }
+
+    renderBooks(filteredBooks);
+}
 
     function filterByCategory(category) {
         currentCategory = category;
@@ -2189,6 +2306,24 @@
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeBookModal();
+        }
+    });
+
+    // Back to Top Button Functionality
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // Show/Hide Back to Top button based on scroll position
+    window.addEventListener('scroll', () => {
+        const backToTopBtn = document.getElementById('backToTop');
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
         }
     });
 
